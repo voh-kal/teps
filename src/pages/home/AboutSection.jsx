@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { ArrowRight, Users, Calendar, Zap, Tag, QrCode, Shield, Globe, BarChart, Settings, Clock, Target, ChevronLeft, ChevronRight, Star, ChevronDown, ChevronUp, X } from 'lucide-react';
 import ActionSection from '../../components/ActionSection';
 import config from '../../config/api';
-
+import { useCreateEvent } from '../../hooks/useCreateEvent';
 // Carousel Component
 function CarouselComponent() {
     const [currentSlide, setCurrentSlide] = useState(0);
@@ -310,6 +310,7 @@ function FAQComponent() {
 }
 
 function AboutSection() {
+    const { handleCreateEvent } = useCreateEvent();
     // Video modal state
     const [isVideoModalOpen, setIsVideoModalOpen] = useState(false);
     // Zoho form modal state
@@ -567,10 +568,10 @@ function AboutSection() {
                                 <p className="text-[15px] text-gray-600">
                                     You’re juggling guest lists in spreadsheets, worrying about gatecrashers, and dreading the registration queue. You deserve to be in the maze with a partner who knows the way out.
                                 </p>
-                                <div >
-                                    <button className="w-[165px] bg-[#1082df] text-white py-4 px-6 rounded-full text-sm" onClick={openZohoFormModal} aria-label="get started with TEPS">
+                                <div className='my-14'>
+                                    <a href={config.getApiUrl(config.endpoints.SIGN_UP)} className="w-[165px] bg-[#1082df] text-white py-4 px-6 rounded-full text-sm"  aria-label="get started with TEPS">
                                         Let's Get Started
-                                    </button>
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -652,9 +653,9 @@ function AboutSection() {
                                 Plan and manage your events now with TEPS. Make use of our adaptive platform to host and manage your events, invite your guests and special guests, seamless check-ins and monitor the progress of your event from start to finish.
                             </p>
                             <div className='mt-[2rem]'>
-                                <a href={config.getApiUrl(config.endpoints.SIGN_UP)}className="w-[140px] bg-white text-black font-semibold py-4 px-6 rounded-full text-sm">
+                                <button  onClick={handleCreateEvent} className="w-[140px] bg-white text-black font-semibold py-4 px-6 rounded-full text-sm">
                                     Create Event
-                                </a>
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -865,10 +866,10 @@ function AboutSection() {
                             <p className="max-w-md text-[14px] text-gray-600 leading-relaxed">
                                 TEPS adapts to every event type; from conferences to team retreats, concerts, sport events, festivals and even VIP events. Our platform is designed to support events of all sizes and formats with ease. Whether you are managing registration for 50 or 5,000 guests, TEPS makes the process smooth, intuitive, and stress-free.
                             </p>
-                            <div >
-                                <button className="w-[165px] bg-[#1082df] text-white py-4 rounded-full text-sm" onClick={openZohoFormModal} aria-label="get started with TEPS">
+                            <div className='my-12'>
+                                <a href={config.getApiUrl(config.endpoints.SIGN_UP)} className="w-[165px] bg-[#1082df] text-white py-4 px-6 rounded-full text-sm" aria-label="get started with TEPS">
                                     Get Started
-                                </button>
+                                </a>
                             </div>
                         </div>
 

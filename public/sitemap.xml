@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- Homepage -->
+  <url>
+    <loc>https://eventeps.com/</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  
+  <!-- About Page -->
+  <url>
+    <loc>https://eventeps.com/about</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Blog Main Page -->
+  <url>
+    <loc>https://eventeps.com/blog</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
+  <!-- Case Studies Page -->
+  <url>
+    <loc>https://eventeps.com/case-studies</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- Privacy Policy Page -->
+  <url>
+    <loc>https://eventeps.com/privacy-policy</loc>
+    <lastmod>2026-02-24</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  
+  <!-- Dynamic blog posts will be generated here -->
+  <!-- 
+    To generate blog post URLs dynamically:
+    1. Fetch from: https://app.eventeps.com/api/v1/landing-page/all-resources
+    2. For each blog post in the response:
+       - URL: https://eventeps.com/blog/{slug} where slug = title.toLowerCase().replace(/[^a-z0-9\s-]/g, '').trim().replace(/\s+/g, '-').replace(/-+/g, '-')
+       - Use the blog post's updated_at or created_at for lastmod
+       - Set changefreq to "never" for published blog posts
+       - Set priority to 0.6 for blog posts
+    
+    Example API response structure:
+    {
+      "success": true,
+      "data": {
+        "all_resources": [
+          {
+            "id": 1,
+            "topic": "Blog Post Title",
+            "description": "Blog content...",
+            "image": "path/to/image.jpg",
+            "is_pinned": false,
+            "created_at": "2026-02-24T00:00:00Z",
+            "updated_at": "2026-02-24T00:00:00Z"
+          }
+        ]
+      }
+    }
+  -->
+</urlset>

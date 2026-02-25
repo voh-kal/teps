@@ -1,7 +1,8 @@
 import config from "../config/api";
-
+import { useCreateEvent } from '../hooks/useCreateEvent';
 
 function ActionSection({header, subheader, onScheduleDemo}) {
+    const { handleCreateEvent } = useCreateEvent();
     return (         
             <section className="bg-[rgba(0,0,0,0.05)] py-16 md:py-24">
                 <div className="max-w-4xl mx-auto px-6 md:px-8">
@@ -14,9 +15,9 @@ function ActionSection({header, subheader, onScheduleDemo}) {
                         </p>
                         
                         <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-                            <a href={config.getApiUrl(config.endpoints.SIGN_UP)} className="bg-[#1082df] text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 min-w-[160px]">
+                            <button onClick={handleCreateEvent}  className="bg-[#1082df] text-white px-8 py-3 rounded-full hover:bg-blue-700 transition-colors duration-300 min-w-[160px]">
                                 Create event now
-                            </a>
+                            </button>
                             <button 
                                 onClick={onScheduleDemo}
                                 className="border-2 border-gray-800 text-gray-800 px-8 py-3 rounded-full hover:bg-gray-800 hover:text-white transition-all duration-300 min-w-[160px]"

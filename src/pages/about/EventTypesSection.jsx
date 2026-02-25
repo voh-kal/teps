@@ -1,7 +1,8 @@
 import Statistics from "../../components/Statistics";
-import config from "../../config/api";
+import { useCreateEvent } from '../../hooks/useCreateEvent';
 
 function EventTypesSection() {
+    const { handleCreateEvent } = useCreateEvent();
     return (
         <>
             <section className="bg-gray-50 py-16 md:py-24 relative">
@@ -113,7 +114,7 @@ function EventTypesSection() {
                                     <p className="text-[14px] text-[#000000BD] ">
                                        TEPS is a flexible event management platform designed to adapt to all event type by providing purpose-built tools for planning, registration, ticketing, guest management and on-site execution. Whatever you are hosting, TEPS scales and adjusts to match your needs. Create your event on TEPS and manage it confidently.
                                     </p>
-                                    <a href={config.getApiUrl(config.endpoints.SIGN_UP)} className="bg-[#1082DF] text-white px-6 py-4 rounded-full font-semibold text-[15px] hover:bg-blue-700 transition-colors duration-300">
+                                    <a onClick={handleCreateEvent} className="bg-[#1082DF] text-white px-6 py-4 rounded-full font-semibold text-[15px] hover:bg-blue-700 transition-colors duration-300 cursor-pointer" aria-label="get started with TEPS">
                                         Start an Event
                                     </a>
                                 </div>
@@ -141,10 +142,7 @@ function EventTypesSection() {
                        
                         <div className="border border-gray-200 rounded-lg p-6 shadow-lg ">
                             <div className="flex items-center mb-4">
-                                <span className="text-4xl font-bold text-gray-400 -mr-2">0</span>
-                                <div className="w-10 h-10 bg-lime-500 rounded-full flex items-center justify-start pl-2">
-                                    <span className="text-2xl font-bold text-white">1</span>
-                                </div>
+                                <img src="/num_1.svg" alt="one software" />
                             </div>
                             <h3 className="text-[24px] font-bold text-[#071440] mb-4 text-left max-w-[250px]">
                                 One Software. From Invite to Entry.
@@ -159,10 +157,7 @@ function EventTypesSection() {
 
                         <div className="border border-gray-200 rounded-lg p-6 shadow-lg">
                             <div className="flex items-center mb-4">
-                                <span className="text-4xl font-bold text-gray-400 -mr-2">0</span>
-                                <div className="w-10 h-10 bg-lime-500 rounded-full flex items-center justify-start pl-2">
-                                    <span className="text-2xl font-bold text-white">1</span>
-                                </div>
+                                <img src="/num_2.svg" alt="effortless feeling" />
                             </div>
                             <h3 className="text-[24px] font-bold text-[#071440] mb-4 text-left max-w-[250px]">
                                 Access That Feels Effortless.
@@ -177,11 +172,8 @@ function EventTypesSection() {
                         </div>
 
                          <div className="border border-gray-200 rounded-lg p-6 shadow-lg  max-w-md">
-                            <div className="flex items-center mb-4">
-                                <span className="text-4xl font-bold text-gray-400 -mr-2">0</span>
-                                <div className="w-10 h-10 bg-lime-500 rounded-full flex items-center justify-start pl-2">
-                                    <span className="text-2xl font-bold text-white">1</span>
-                                </div>
+                           <div className="flex items-center mb-4">
+                                <img src="/num_3.svg" alt="intelligence data" />
                             </div>
                             <h3 className="text-[24px] font-bold text-[#071440] mb-4 text-left max-w-[300px]">
                                 Your Data = Intelligence

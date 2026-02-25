@@ -9,6 +9,8 @@ import Preloader from './components/Preloader';
 import Privacy from './pages/rules/Privacy';
 import NotFound from './pages/NotFound';
 import ReactGA from 'react-ga4';
+import SsoCallback from './pages/SsoCallback';
+import CreateEvent from './pages/CreateEvent';
 
 const initGA = () => {
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
@@ -71,6 +73,8 @@ function App() {
             <Route path="/blog/:slug" element={<BlogPost />} />
             <Route path="/case-studies" element={<CaseStudies />} />
             <Route path="/privacy-policy" element={<Privacy />} />
+            <Route path="/sso/callback" element={<SsoCallback />} />
+            <Route path="/create-event" element={<CreateEvent />} />
             {/* Catch-all route for 404 errors */}
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import config from '../../config/api';
+import { useCreateEvent } from '../../hooks/useCreateEvent';
 
 function Hero({ onScheduleDemo }) {
+    const { handleCreateEvent } = useCreateEvent();
+
     const [currentText, setCurrentText] = useState('');
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isDeleting, setIsDeleting] = useState(false);
@@ -54,10 +57,10 @@ function Hero({ onScheduleDemo }) {
                             </span>
                         </div>
                         <div className="flex flex-col md:flex-row gap-4 justify-center items-center">
-                            <a href={config.getApiUrl(config.endpoints.SIGN_UP)}  className="bg-gradient-to-r from-[#2226FD] to-[#3AC4FF] border-2 border-[#3AC4FF] text-white px-6 py-3 rounded-full hover:opacity-90 transition text-center w-[245px] text-[16px] font-semibold">
+                            <button onClick={handleCreateEvent} className="bg-gradient-to-r from-[#2226FD] to-[#3AC4FF] border-2 border-[#3AC4FF] text-white px-6 py-3 rounded-full hover:opacity-90 transition text-center w-[245px] text-[16px] font-semibold">
                                 Create Event
-                            </a>
-                            <button 
+                            </button>
+                            <button
                                 onClick={onScheduleDemo}
                                 className="bg-transparent border-2 border-white text-white px-6 py-3 rounded-full hover:bg-white hover:text-[#2226FD] transition text-center w-[245px] text-[16px] font-semibold"
                                 aria-label="Schedule a demo with TEPS"

@@ -247,7 +247,7 @@ function BlogPost() {
         <div className='bg-[rgba(0,0,0,0.05)]'>
             <Navbar />
             <Hero header="THE EXPERIENCE PLUG SYSTEM  BLOG" subHeader="Your source for the latest news, insights, and updates from The Experience Plug System." />
-            <div className="min-h-screen pb-16 bg-[rgba(0,0,0,0.05)] px-6 md:px-8">
+            <div className="min-h-screen pb-16  px-6 md:px-8">
                 {/* Header Section */}
                 <div className="max-w-7xl mx-auto py-3 md:py-6">
                     <button
