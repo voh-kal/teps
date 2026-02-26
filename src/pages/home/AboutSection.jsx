@@ -120,42 +120,42 @@ function TestimonialSlider() {
     const testimonials = [
         {
             id: 1,
-            image: "/testimonial-user-1.jpg",
+            image: "/rating.svg",
             name: "Sarah Johnson",
             comment: "TEPS made our corporate conference seamless. The registration process was smooth and the analytics helped us understand our attendees better.",
             stars: 5
         },
         {
             id: 2,
-            image: "/testimonial-user-2.jpg",
+            image: "/rating.svg",
             name: "Michael Adeyemi",
             comment: "Planning our wedding with TEPS was incredible. The guest management and RSVP tracking saved us so much time and stress.",
             stars: 5
         },
         {
             id: 3,
-            image: "/testimonial-user-3.jpg",
+            image: "/rating.svg",
             name: "Dr. Amina Mohammed",
             comment: "Our educational summit reached new heights. The platform handled complex scheduling effortlessly.",
             stars: 5
         },
         {
             id: 4,
-            image: "/testimonial-user-4.jpg",
+            image: "/rating.svg",
             name: "James Wilson",
             comment: "The QR code integration and real-time analytics made our music festival management incredibly efficient.",
             stars: 5
         },
         {
             id: 5,
-            image: "/testimonial-user-5.jpg",
+            image: "/rating.svg",
             name: "Grace Okafor",
             comment: "TEPS customer support is outstanding. They helped us every step of the way for our charity gala.",
             stars: 5
         },
         {
             id: 6,
-            image: "/testimonial-user-6.jpg",
+            image: "/rating.svg",
             name: "David Chen",
             comment: "The vendor management and POS integration made our trade show incredibly successful.",
             stars: 5
@@ -935,7 +935,7 @@ function AboutSection() {
                     {/* Centered Header */}
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
-                            What Our Users Say
+                            Our Ratings and Reviews
                         </h2>
 
                         {/* 5 Stars and Rating */}
@@ -949,7 +949,7 @@ function AboutSection() {
 
 
                         <p className="text-lg text-gray-600 max-w-md mx-auto">
-                            Over 1,000+ event organizers trust TEPS to deliver exceptional experiences
+                            Based on thousands of reviews from all our satisfied clients and users
                         </p>
                     </div>
 

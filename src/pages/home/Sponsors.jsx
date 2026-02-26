@@ -4,6 +4,17 @@ function Sponsors() {
         '/sponsor2.svg',
         '/sponsor3.svg',
         '/sponsor4.svg',
+        '/sponsor5.svg',
+        '/sponsor6.svg',
+        '/sponsor7.svg',
+        '/sponsor8.svg',
+        '/sponsor9.svg',
+        '/sponsor10.svg',
+        '/sponsor11.svg',
+        '/sponsor12.svg',
+        '/sponsor13.svg',
+        '/sponsor14.svg',
+        '/sponsor15.svg',
     ];
 
     return (
