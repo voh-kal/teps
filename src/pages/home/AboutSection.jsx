@@ -1002,7 +1002,7 @@ function AboutSection() {
                         {/* Video Container */}
                         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                             <iframe
-                                src="https://www.youtube.com/embed/WY0mbKFuG_o?rel=0&origin=https://eventeps.com"
+                                src={`https://www.youtube.com/embed/WY0mbKFuG_o?rel=0&origin=${window.location.origin}`}
                                 title="TEPS Video"
                                 className="absolute top-0 left-0 w-full h-full"
                                 frameBorder="0"
