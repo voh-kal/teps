@@ -1002,12 +1002,13 @@ function AboutSection() {
                         {/* Video Container */}
                         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                             <iframe
-                                src={`https://www.youtube.com/embed/WY0mbKFuG_o?rel=0&origin=${window.location.origin}`}
+                                src="https://www.youtube.com/embed/WY0mbKFuG_o?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1"
                                 title="TEPS Video"
                                 className="absolute top-0 left-0 w-full h-full"
                                 frameBorder="0"
                                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                 allowFullScreen
+                                referrerPolicy="strict-origin-when-cross-origin"
                             ></iframe>
                         </div>
                     </div>
