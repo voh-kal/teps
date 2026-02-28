@@ -62,22 +62,25 @@ export default function Navbar() {
       {/* Mobile Menu */}
       {open && (
         <div className="md:hidden px-4 pb-4 space-y-3">
-          <div className="relative">
+          {/* <div className="relative">
             <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 w-4 h-4" />
             <input
               type="text"
               placeholder="Search..."
               className="w-full pl-10 pr-4 py-2 rounded-[50px] border"
             />
-          </div>
+          </div> */}
 
           <a href="/about" className="block text-[#4A4949]">About Us</a>
           <a href="/case-studies" className="block text-[#4A4949]">Case Studies</a>
           <a href="/blog" className="block text-[#4A4949]">Blog</a>
-          <a href="/log-in" className="block text-[#4A4949]">Log In</a>
-          <a href="/sign-up" className="w-full bg-[#1082df] text-white py-2 rounded-full">
+          <a href={config.getApiUrl(config.endpoints.LOG_IN)} className="block text-[#4A4949]">Log In</a>
+          <div className="my-8">
+            <a href={config.getApiUrl(config.endpoints.SIGN_UP)} className="w-full bg-[#1082df] text-white py-3 px-6 rounded-full">
             Sign Up
           </a>
+          </div>
+         
         </div>
       )}
     </nav>

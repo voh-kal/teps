@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ArrowRight, Users, Calendar, Zap, Tag, QrCode, Shield, Globe, BarChart, Settings, Clock, Target, ChevronLeft, ChevronRight, Star, ChevronDown, ChevronUp, X } from 'lucide-react';
 import ActionSection from '../../components/ActionSection';
+import LazyImage from '../../components/LazyImage';
 import config from '../../config/api';
 import { useCreateEvent } from '../../hooks/useCreateEvent';
 // Carousel Component
@@ -12,21 +13,21 @@ function CarouselComponent() {
             id: 1,
             image: "/alte_frame.svg",
             title: "Alte Cultural Festival",
-            description: "Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit ametr",
+            description: "Alte Culture Fest isn’t just another Lagos event; it’s a movement. A big community that promotes identity shaped by self-expression, music, and creative freedom. This year’s edition, powered by Q21 Solutions, brought that culture to life once again, and TEPS was right in the mix, making sure the flow matched the energy........",
             company: "The Podium, Ikeja , Lagos",
         },
         {
             id: 2,
             image: "/checkin.svg",
-            title: "Chrystallis Conversations",
-            description: "Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit ametr",
+            title: "Jameson Distillery Tour (JDOT 2025)",
+            description: "The Jameson Distillery Tour (JDOT 2025) is a multi-city experiential series designed to celebrate craft, culture, and community through immersive brand experiences and curated partnerships. Executing an activation of this scale required tight coordination between vendors, internal teams, and stakeholders operating simultaneously across multiple locations.........",
             company: "Eko Hotel & Suit, Victorial Island, Lagos",
         },
         {
             id: 3,
             image: "/event_4.svg",
             title: "RenewHer",
-            description: "Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Lorem ipsum dolor sit ametr",
+            description: "The Renew HER Gala & Awards is one of the most anticipated high-level events of the year, hosting over 600 distinguished guests, VIPs, and government officials. With a two-venue format Eagle Square for arrivals and accreditation, and the State House Banquet Hall for the main event. The organizers needed an access-management partner capable.........",
             company: "The Monarch Event Center, Lekki",
         }
     ];
@@ -71,7 +72,7 @@ function CarouselComponent() {
                                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 lg:gap-8 items-center">
                                     {/* Left side - Image */}
                                     <div className="relative md:col-span-1">
-                                        <img
+                                        <LazyImage
                                             src={slide.image}
                                             alt={slide.title}
                                             className="w-full max-w-sm mx-auto md:max-w-none object-cover rounded-xl"
@@ -203,7 +204,7 @@ function TestimonialSlider() {
                             {/* First Row - Image, Name, Stars */}
                             <div className="flex items-center justify-between mb-4">
                                 <div className="flex items-center space-x-4">
-                                    <img
+                                    <LazyImage
                                         src={testimonial.image}
                                         alt={testimonial.name}
                                         className="w-12 h-12 rounded-full object-cover"
@@ -540,7 +541,15 @@ function AboutSection() {
                         {/* Second part - YouTube Video */}
                         <div className="relative">
                             <div className="cursor-pointer transition-transform hover:scale-105" onClick={openVideoModal}>
-                                <img src="/video.svg" alt="Teps youtube video" />
+                                <div className="relative">
+                                    <LazyImage src="https://img.youtube.com/vi/WY0mbKFuG_o/maxresdefault.jpg" alt="Teps youtube video" className="w-full h-auto rounded-lg" />
+                                    {/* Play Button */}
+                                    <div className="absolute -left-5 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors duration-300">
+                                        <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                            <path d="M8 5v14l11-7z"/>
+                                        </svg>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -682,7 +691,7 @@ function AboutSection() {
                     <img src="/host_sun.svg" alt="" className="h-full object-cover" />
                 </div>
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
-                    <div className="border-7 border-[#D9D9D9] p-8 md:p-12 rounded-[20px] bg-[#6B95FF30]">
+                    <div className="border-7 border-[#D9D9D9] p-2 md:p-12 rounded-[20px] bg-[#6B95FF30]">
                         {/* Header and Subheader */}
                         <div className="text-center mb-12">
                             <h2 className="text-2xl md:text-3xl font-bold text-black mb-1">
@@ -695,8 +704,18 @@ function AboutSection() {
 
                         {/* Content - Equally divided into 2 parts */}
                         <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center ">
-                            {/* First part - Text Content */}
-                            <div className="space-y-6">
+                            {/* Second part - Image (shows first on mobile) */}
+                            <div className="flex justify-center order-1 md:order-2">
+                                <div className="w-full max-w-md">
+                                    <img
+                                        src="/alte_thumb.svg"
+                                        alt="Event Management Dashboard"
+                                        className="w-full h-auto"
+                                    />
+                                </div>
+                            </div>
+                            {/* First part - Text Content (shows second on mobile) */}
+                            <div className="space-y-6 order-2 md:order-1">
                                 <div className="space-y-2">
                                     <h5 className="text-1xl font-semibold text-black">
                                         Create Events
@@ -722,23 +741,13 @@ function AboutSection() {
                                     </p>
                                 </div>
                             </div>
-                            {/* Second part - Image */}
-                            <div className="flex justify-center">
-                                <div className="w-full max-w-md">
-                                    <img
-                                        src="/family_day_out.svg"
-                                        alt="Event Management Dashboard"
-                                        className="w-full h-auto"
-                                    />
-                                </div>
-                            </div>
                         </div>
 
 
                     </div>
                 </div>
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
-                    <div className="border-7 border-[#D9D9D9] p-8 md:p-12 rounded-[20px] bg-[#6B95FF30]">
+                    <div className="border-7 border-[#D9D9D9] p-2 md:p-12 rounded-[20px] bg-[#6B95FF30]">
                         {/* Header and Subheader */}
                         <div className="text-center mb-12">
                             <h2 className="text-2xl md:text-3xl font-bold text-black mb-1">
@@ -755,7 +764,7 @@ function AboutSection() {
                             <div className="flex justify-center">
                                 <div className="w-full max-w-md">
                                     <img
-                                        src="/checkin.svg"
+                                        src="/self_checkin.svg"
                                         alt="Event Management Dashboard"
                                         className="w-full h-auto rounded-lg shadow-lg"
                                     />
@@ -833,7 +842,7 @@ function AboutSection() {
                                 <div key={box.id} className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100">
                                     <div className="text-center">
                                         <div className="w-16 h-16 flex items-center justify-center mx-auto mb-2  transition-colors duration-300">
-                                            <img src={`${FeatureIconUrl}`} className="w-8 h-8 text-white transition-colors duration-300" alt='Teps features' />
+                                            <LazyImage src={`${FeatureIconUrl}`} className="w-8 h-8 text-white transition-colors duration-300" alt='Teps features' />
                                         </div>
                                         <h3 className="text-[14px] font-bold text-black mb-1">{box.title}</h3>
                                         <p className="text-[#000000A3] text-[12px] ">
@@ -930,15 +939,15 @@ function AboutSection() {
             </section>
 
             {/* Ratings Section */}
-            <section className="bg-[rgba(0,0,0,0.05)] py-16 md:py-24">
+            {/* <section className="bg-[rgba(0,0,0,0.05)] py-16 md:py-24">
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
-                    {/* Centered Header */}
+                   
                     <div className="text-center mb-16">
                         <h2 className="text-3xl md:text-4xl font-bold text-black mb-8">
                             Our Ratings and Reviews
                         </h2>
 
-                        {/* 5 Stars and Rating */}
+                    
                         <div className="flex justify-center items-center mb-2 items-start">
                             {[...Array(5)].map((_, index) => (
                                 <Star key={index} className="w-8 h-8 fill-yellow-400 text-yellow-400" />
@@ -953,10 +962,10 @@ function AboutSection() {
                         </p>
                     </div>
 
-                    {/* Testimonial Slider */}
+                  
                     <TestimonialSlider />
                 </div>
-            </section>
+            </section> */}
 
             {/* FAQ Section */}
             <section className="bg-[#19213D] py-16 md:py-24">

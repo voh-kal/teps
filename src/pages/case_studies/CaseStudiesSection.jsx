@@ -14,6 +14,7 @@ function CaseStudiesSection() {
             modalData: {
                 image: '/event_2.svg',
                 title: 'Alte Cultural Festival 2023',
+                subtitle: 'The TEPS Way!',
                 description: 'Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci Vitae enim ac auctor consequat orci Lorem ipsum dolor sit amet consectetur. Ornare et augue facilisis Vitae enim ac auctor consequat orci',
                 location: 'Convention Center, San Francisco',
                 time: 'September 15-17, 2023',

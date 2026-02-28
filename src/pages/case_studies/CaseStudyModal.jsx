@@ -1,4 +1,5 @@
 import { X, MapPin, Clock } from 'lucide-react';
+import LazyImage from '../../components/LazyImage';
 
 function CaseStudyModal({ caseStudy, onClose }) {
     const modalData = caseStudy.modalData;
@@ -22,7 +23,7 @@ function CaseStudyModal({ caseStudy, onClose }) {
                     <div className="md:col-span-1 space-y-6">
                         {/* Case Study Image */}
                         <div>
-                            <img 
+                            <LazyImage 
                                 src={modalData.image} 
                                 alt={modalData.title}
                                 className="w-full h-[293px] object-cover rounded-lg"
@@ -38,7 +39,7 @@ function CaseStudyModal({ caseStudy, onClose }) {
                             
                             {/* Host Profile */}
                             <div className="flex items-center space-x-3">
-                                <img 
+                                <LazyImage 
                                     src={modalData.hostImage} 
                                     alt={modalData.hostName}
                                     className="w-12 h-12 rounded-full object-cover"
@@ -54,16 +55,14 @@ function CaseStudyModal({ caseStudy, onClose }) {
                     <div className="md:col-span-2 space-y-6 overflow-y-auto pr-2">
                         {/* Title and Description */}
                         <div>
-                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+                            <h2 className="text-1xl md:text-2xl font-bold text-gray-900 mb-4">
                                 {modalData.title}
                             </h2>
-                            <p className="text-gray-600 leading-relaxed mb-6">
-                                {modalData.description}
-                            </p>
+                            
                         </div>
 
                         {/* Event Details */}
-                        <div className="space-y-4">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
                             {/* Location */}
                             <div className="flex items-center space-x-3">
                                 <MapPin size={20} className="text-gray-500" />
@@ -77,6 +76,23 @@ function CaseStudyModal({ caseStudy, onClose }) {
                             </div>
                         </div>
 
+                        <div>
+                            <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 text-center">
+                                {modalData.subtitle}
+                            </h2>
+                            <hr />
+                        </div>
+
+                        <div>
+                            <h4>Setting the Stage</h4>
+                            <p>{modalData.setting}</p>
+                        </div>
+
+                        <div>
+                            <h4>The Challenge</h4>
+                            <p>{modalData.challenge}</p>
+                        </div>
+
                         {/* Event Images */}
                         <div>
                             <h4 className="text-lg font-semibold text-gray-900 mb-4">
@@ -85,10 +101,10 @@ function CaseStudyModal({ caseStudy, onClose }) {
                             <div className="grid grid-cols-3 gap-4">
                                 {modalData.eventImages.map((image, index) => (
                                     <div key={index}>
-                                        <img 
+                                        <LazyImage 
                                             src={image} 
                                             alt={`Event ${index + 1}`}
-                                            className="w-full h-[172] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-pointer"
+                                            className="w-full h-[172px] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-pointer"
                                         />
                                     </div>
                                 ))}

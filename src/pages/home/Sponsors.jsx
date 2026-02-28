@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import LazyImage from "../../components/LazyImage";
 
 function Sponsors() {
     const scrollRef = useRef(null);
@@ -51,7 +52,7 @@ function Sponsors() {
                     <div ref={scrollRef} className="flex" style={{ width: 'max-content' }}>
                         {[...sponsors, ...sponsors].map((sponsor, index) => (
                             <div key={index} className="flex-shrink-0 w-[200px] md:w-[250px]">
-                                <img
+                                <LazyImage
                                     src={sponsor}
                                     alt={`Sponsor ${(index % sponsors.length) + 1}`}
                                     className="h-[100px] object-contain mx-auto"

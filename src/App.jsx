@@ -1,16 +1,18 @@
 import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-dom';
-import { useEffect } from 'react';
-import Home from './pages/home/Index';
-import About from './pages/about/Index';
-import Blog from './pages/blog/Index';
-import CaseStudies from './pages/case_studies/Index';
-import BlogPost from './pages/blog/BlogPost';
+import { useEffect, Suspense, lazy } from 'react';
 import Preloader from './components/Preloader';
-import Privacy from './pages/rules/Privacy';
-import NotFound from './pages/NotFound';
 import ReactGA from 'react-ga4';
-import SsoCallback from './pages/SsoCallback';
-import CreateEvent from './pages/CreateEvent';
+
+// Lazy load components for better performance
+const Home = lazy(() => import('./pages/home/Index'));
+const About = lazy(() => import('./pages/about/Index'));
+const Blog = lazy(() => import('./pages/blog/Index'));
+const CaseStudies = lazy(() => import('./pages/case_studies/Index'));
+const BlogPost = lazy(() => import('./pages/blog/BlogPost'));
+const Privacy = lazy(() => import('./pages/rules/Privacy'));
+const NotFound = lazy(() => import('./pages/NotFound'));
+const SsoCallback = lazy(() => import('./pages/SsoCallback'));
+const CreateEvent = lazy(() => import('./pages/CreateEvent'));
 
 const initGA = () => {
   const measurementId = import.meta.env.VITE_GA_MEASUREMENT_ID;
@@ -66,6 +68,7 @@ function App() {
     <BrowserRouter>
       <PageTracker />
       <Preloader />
+      <Suspense fallback={<Preloader />}>
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
@@ -78,6 +81,7 @@ function App() {
             {/* Catch-all route for 404 errors */}
             <Route path="*" element={<NotFound />} />
           </Routes>
+      </Suspense>
     </BrowserRouter>
   );
 }
