@@ -26,6 +26,14 @@ export default defineConfig({
   server: {
     hmr: {
       overlay: false
+    },
+    // Fix MIME type issues
+    fs: {
+      strict: false
     }
+  },
+  // Ensure proper file extensions are handled
+  resolve: {
+    extensions: ['.js', '.jsx', '.ts', '.tsx']
   }
 })
