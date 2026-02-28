@@ -12,13 +12,17 @@ export default defineConfig({
           vendor: ['react', 'react-dom'],
           ui: ['lucide-react'],
           router: ['react-router-dom']
-        }
+        },
+        entryFileNames: 'assets/[name].[hash].js',
+        chunkFileNames: 'assets/[name].[hash].js',
+        assetFileNames: 'assets/[name].[hash].[ext]'
       }
     },
     chunkSizeWarningLimit: 1000,
     target: 'esnext',
     minify: 'esbuild',
-    sourcemap: false
+    sourcemap: false,
+    outDir: 'dist'
   },
   optimizeDeps: {
     include: ['react', 'react-dom', 'lucide-react', 'react-router-dom']
