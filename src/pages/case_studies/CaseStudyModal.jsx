@@ -31,13 +31,13 @@ function CaseStudyModal({ caseStudy, onClose }) {
                         </div>
 
                         {/* Host Information */}
-                        <div>
+                        {/* <div>
                             <h3 className="text-lg font-semibold text-gray-900 mb-3">
                                 Hosted by
                             </h3>
                             <hr className="border-gray-300 mb-4" />
                             
-                            {/* Host Profile */}
+                           
                             <div className="flex items-center space-x-3">
                                 <LazyImage 
                                     src={modalData.hostImage} 
@@ -48,7 +48,7 @@ function CaseStudyModal({ caseStudy, onClose }) {
                                     {modalData.hostName}
                                 </span>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Right Column (2/3) - Scrollable */}
@@ -84,13 +84,33 @@ function CaseStudyModal({ caseStudy, onClose }) {
                         </div>
 
                         <div>
-                            <h4>Setting the Stage</h4>
-                            <p>{modalData.setting}</p>
+                            <h4 className='text-lg font-semibold text-gray-900'>Setting the Stage</h4>
+                            <p className="text-[#000000A3]">{modalData.setting}</p>
                         </div>
 
                         <div>
-                            <h4>The Challenge</h4>
-                            <p>{modalData.challenge}</p>
+                            <h4 className='text-lg font-semibold text-gray-900'>The Challenge</h4>
+                            <p className="text-[#000000A3]">{modalData.challenge}</p>
+                        </div>
+
+                        <div>
+                            <h4 className='text-lg font-bold text-blue-600'>TEPS</h4>
+                            <p className="text-[#000000A3] whitespace-pre-line">{modalData.teps}</p>
+                        </div>
+
+                         <div>
+                            <h4 className='text-lg font-semibold text-gray-900'>Collaboration in Action</h4>
+                            <p className="text-[#000000A3] whitespace-pre-line">{modalData.collaboration}</p>
+                        </div>
+
+                         <div>
+                            <h4 className='text-lg font-semibold text-gray-900'>Results and Insights</h4>
+                            <p className="text-[#000000A3] whitespace-pre-line">{modalData.result}</p>
+                        </div>
+
+                         <div>
+                            <h4 className='text-lg font-semibold text-gray-900'>Takeaway</h4>
+                            <p className="text-[#000000A3]">{modalData.takeaway}</p>
                         </div>
 
                         {/* Event Images */}
