@@ -11,21 +11,21 @@ function CarouselComponent() {
     const carouselData = [
         {
             id: 1,
-            image: "/alte_frame.svg",
+            image: "/event_2.png",
             title: "Alte Cultural Festival",
             description: "Alte Culture Fest isn’t just another Lagos event; it’s a movement. A big community that promotes identity shaped by self-expression, music, and creative freedom. This year’s edition, powered by Q21 Solutions, brought that culture to life once again, and TEPS was right in the mix, making sure the flow matched the energy........",
             company: "The Podium, Ikeja , Lagos",
         },
         {
             id: 2,
-            image: "/checkin.svg",
+            image: "/jameson.svg",
             title: "Jameson Distillery Tour (JDOT 2025)",
             description: "The Jameson Distillery Tour (JDOT 2025) is a multi-city experiential series designed to celebrate craft, culture, and community through immersive brand experiences and curated partnerships. Executing an activation of this scale required tight coordination between vendors, internal teams, and stakeholders operating simultaneously across multiple locations.........",
             company: "Eko Hotel & Suit, Victorial Island, Lagos",
         },
         {
             id: 3,
-            image: "/event_4.svg",
+            image: "/event_4.png",
             title: "RenewHer",
             description: "The Renew HER Gala & Awards is one of the most anticipated high-level events of the year, hosting over 600 distinguished guests, VIPs, and government officials. With a two-venue format Eagle Square for arrivals and accreditation, and the State House Banquet Hall for the main event. The organizers needed an access-management partner capable.........",
             company: "The Monarch Event Center, Lekki",
@@ -333,9 +333,9 @@ function AboutSection() {
     const [submitMessage, setSubmitMessage] = useState('');
 
     const backgroundImages = [
-        '/case_studies_1.svg',
+        '/case_studies_1.png',
         '/case_studies_2.svg',
-        '/case_studies_3.svg',
+        '/event_2.png',
         '/case_studies_4.svg',
         '/case_studies_5.svg',
     ];
@@ -892,12 +892,12 @@ function AboutSection() {
 
                                 {/* Second column, first row - normal */}
                                 <div className="transition-transform duration-300 hover:scale-105 hover:translate-x-4">
-                                    <img src="/built_2.svg" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                                    <img src="/built_2.png" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
                                 </div>
 
                                 {/* First column, second row - elevated and shifted left on md+ */}
                                 <div className="md:-translate-y-8 md:-translate-x-4 transition-transform duration-300 hover:scale-105 hover:-translate-x-8">
-                                    <img src="/built_3.svg" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                                    <img src="/built_3.png" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
                                 </div>
 
                                 {/* Second column, second row - shifted left on md+ */}

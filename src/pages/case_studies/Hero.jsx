@@ -8,9 +8,9 @@ function Hero() {
     
     // Array of background images
     const backgroundImages = [
-        '/case_studies_1.svg',
+        '/case_studies_1.png',
         '/case_studies_2.svg',
-        '/case_studies_3.svg',
+        '/event_2.png',
         '/case_studies_4.svg',
         '/case_studies_5.svg',
     ];

@@ -8,11 +8,11 @@ function CaseStudiesSection() {
     const caseStudies = [
         {
             id: 1,
-            image: '/event_2.svg',
+            image: '/event_2.png',
             title: 'Alte Cultural Festival',
             description: 'Alte Culture Fest isn\'t just another Lagos event; it\'s a movement. A big community that promotes identity shaped by self-expression, music, and creative freedom. TEPS was right in the mix, making sure the flow matched the energy with seamless ticketing, QR codes for instant access, and real-time dashboards.',
             modalData: {
-                image: '/event_2.svg',
+                image: '/event_2.png',
                 title: 'Alte Cultural Festival 2023',
                 subtitle: 'The TEPS Way!',
                 setting: 'Alte Culture Fest isn\'t just another Lagos event; it\'s a movement. A big community that promotes identity shaped by self-expression, music, and creative freedom. This year\'s edition, powered by Q21 Solutions, brought that culture to life once again, and TEPS was right in the mix, making sure the flow matched the energy. Because when a festival means this much to the people, the last thing anyone wants is ticket stress or entry wahala ruining the vibe.',
@@ -25,16 +25,16 @@ function CaseStudiesSection() {
                 time: 'December 2023',
                 hostName: 'Sarah Johnson',
                 hostImage: '/host.svg',
-                eventImages: ['/event_2.svg', '/event_2.svg', '/event_2.svg']
+                eventImages: ['/alte_1.jpg', '/alte_2.jpg', '/alte_3.jpg','/alte_4.jpg', '/alte_5.jpg', '/alte_6.jpg','/alte_7.jpg', '/alte_8.jpg', '/alte_9.jpg']
             }
         },
         {
             id: 2,
-            image: '/event_3.svg',
+            image: '/about.jpg',
             title: 'Demo Day',
             description: 'The NSIA Prize for Innovation Demo Day is the grand finale of the NSIA Prize for Innovation (NPI). A national innovation competition by the Nigeria Sovereign Investment Authority (NSIA) designed to uncover, support, and fund early-stage Nigerian innovators building solutions to pressing national challenges.....',
             modalData: {
-                image: '/event_3.svg',
+                image: '/about.jpg',
                 title: 'Demo Day',
                 subtitle: 'NSIA Prize for Innovation (NPI 3.0)',
                 setting: 'The NSIA Prize for Innovation Demo Day is the grand finale of the NSIA Prize for Innovation (NPI). A national innovation competition by the Nigeria Sovereign Investment Authority (NSIA) designed to uncover, support, and fund early-stage Nigerian innovators building solutions to pressing national challenges.\nAs a high-profile event bringing together startup founders, investors, government stakeholders, partners, and media, the organizers required a smooth, structured, and reliable registration system capable of managing multiple guest tiers without friction.',
@@ -47,16 +47,16 @@ function CaseStudiesSection() {
                 time: 'October 22, 2023',
                 hostName: 'Michael Chen',
                 hostImage: '/host.svg',
-                eventImages: ['/event_3.svg', '/event_3.svg', '/event_3.svg']
+                eventImages: ['/demo_1.JPG', '/demo_2.JPG', '/demo_3.JPG','/demo_4.JPG', '/demo_5.JPG', '/demo_6.JPG','/demo_7.JPG', '/demo_8.JPG', '/demo_9.JPG']
             }
         },
         {
             id: 3,
-            image: '/event_4.svg',
+            image: '/event_4.png',
             title: 'RenewHer: The Presidential Women Health Transformative Initiative.',
             description: 'The Renew HER Gala & Awards hosted over 600 distinguished guests, VIPs, and government officials across two venues—Eagle Square and State House Banquet Hall. TEPS coordinated movement, security, technology, and people with precision for this Presidential-level event.',
             modalData: {
-                image: '/event_4.svg',
+                image: '/event_4.png',
                 title: 'RenewHer: The Presidential Women Health Transformative Initiative.',
                 subtitle: 'TWO VENUES, ONE SEAMLESS JOURNEY: HOW TEPS DELIVERED RENEWHER GALA & AWARDS.',  
                 setting: 'The Renew HER Gala & Awards is one of the most anticipated high-level events of the year, hosting over 600 distinguished guests, VIPs, and government officials. With a two-venue format—Eagle Square for arrivals and accreditation, and the State House Banquet Hall for the main event—the organizers needed an access-management partner capable of coordinating movement, security, technology, and people with precision. TEPS was brought in to map a flawless guest journey end-to-end.',
@@ -69,7 +69,7 @@ function CaseStudiesSection() {
                 time: 'November 2023',
                 hostName: 'Elena Rodriguez',
                 hostImage: '/host.svg',
-                eventImages: ['/event_4.svg', '/event_4.svg', '/event_4.svg']
+                eventImages: ['/renewher_1.jpg', '/renewher_2.jpg', '/renewher_3.jpg']
             }
         },
         {
@@ -89,7 +89,7 @@ function CaseStudiesSection() {
                 takeaway: 'At TEPS, we understand that every event is unique, and we are committed to providing tailored solutions that meet the specific needs of our clients. By combining technology with a deep understanding of event dynamics, we are able to create seamless experiences that allow attendees to focus on what matters most – the event itself.',
                 location: 'The Podium, Lekki, Lagos',
                 time: 'July 5–6, 2025',
-                eventImages: ['/event_1.svg', '/event_1.svg', '/event_1.svg']
+                eventImages: ['/epic_1.jpg', '/epic_2.jpg', '/epic_3.jpg','/epic_4.jpg', '/epic_5.jpg', '/epic_6.jpg','/epic_7.jpg', '/epic_8.jpg']
             }
         },
         {
