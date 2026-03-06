@@ -113,22 +113,24 @@ function CaseStudyModal({ caseStudy, onClose }) {
                         </div>
 
                         {/* Event Images */}
-                        <div>
-                            <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
-                                Event Gallery
-                            </h4>
-                            <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
-                                {modalData.eventImages.map((image, index) => (
-                                    <div key={index}>
-                                        <LazyImage 
-                                            src={image} 
-                                            alt={`Event ${index + 1}`}
-                                            className="w-full h-[120px] sm:h-[150px] lg:h-[172px] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-pointer"
-                                        />
-                                    </div>
-                                ))}
+                        {modalData.eventImages && modalData.eventImages.length > 0 && (
+                            <div>
+                                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
+                                    Event Gallery
+                                </h4>
+                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+                                    {modalData.eventImages.map((image, index) => (
+                                        <div key={index}>
+                                            <LazyImage 
+                                                src={image} 
+                                                alt={`Event ${index + 1}`}
+                                                className="w-full h-[120px] sm:h-[150px] lg:h-[172px] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-pointer"
+                                            />
+                                        </div>
+                                    ))}
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
                 </div>
             </div>

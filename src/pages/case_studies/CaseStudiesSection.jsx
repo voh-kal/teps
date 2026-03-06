@@ -111,7 +111,7 @@ function CaseStudiesSection() {
                 time: 'October 22, 2023',
                 hostName: 'Michael Chen',
                 hostImage: '/host.svg',
-                eventImages: ['/event_5.svg', '/event_5.svg', '/event_5.svg']
+                eventImages: []
             }
         },
         {
@@ -133,7 +133,7 @@ function CaseStudiesSection() {
                 time: 'November 8-11, 2023',
                 hostName: 'Elena Rodriguez',
                 hostImage: '/host.svg',
-                eventImages: ['/event_6.svg', '/event_6.svg', '/event_6.svg']
+                eventImages: []
             }
         }
     ];
