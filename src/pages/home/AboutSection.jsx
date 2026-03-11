@@ -716,6 +716,12 @@ function AboutSection() {
                             </div>
                             {/* First part - Text Content (shows second on mobile) */}
                             <div className="space-y-6 order-2 md:order-1">
+                                 <div className="block md:hidden">
+                                    <p className="text-[#000000A3] text-sm">
+                                        Hosting and managing an event has never been easier. You can host simple and complex events, create custom landing pages, sell tickets and manage all your event activities in one place.
+                                    </p>
+                                </div>
+                                <div className="hidden md:block space-y-6">
                                 <div className="space-y-2">
                                     <h5 className="text-1xl font-semibold text-black">
                                         Create Events
@@ -739,6 +745,7 @@ function AboutSection() {
                                     <p className="text-[#000000A3]">
                                         You can assign roles to team members for smooth event operations and lead capture.
                                     </p>
+                                </div>
                                 </div>
                             </div>
                         </div>
@@ -772,29 +779,39 @@ function AboutSection() {
                             </div>
                             {/* First part - Text Content */}
                             <div className="space-y-6">
-                                <div className="space-y-2">
-                                    <h5 className="text-1xl font-semibold text-black">
-                                        Attendees
-                                    </h5>
-                                    <p className="text-[#000000A3]">
-                                        Monitor attendees registration, ticket sales, RSVPs and be sure of who is attending your event.
+                                {/* Mobile summary paragraph - shows only on small screens */}
+                                <div className="block md:hidden">
+                                    <p className="text-[#000000A3] text-sm">
+                                        Monitor attendees registration, ticket sales, RSVPs and control large crowds on-site with our fast check-in badges or QR-codes to avoid long queues and have your event perfectly coordinated. Our platform also help to keep close contact with attendees pre and post event, to keep attendees updated, resolve any issue before, during or after an event and get adequate feedbacks.
                                     </p>
                                 </div>
-                                <div className="space-y-2">
-                                    <h5 className="text-1xl font-semibold text-black">
-                                        Check-Ins
-                                    </h5>
-                                    <p className="text-[#000000A3]">
-                                        Control large crowds on-site with our fast check-in badges, or QR-codes and avoid long queues. Have your event perfectly coordinated.
-                                    </p>
-                                </div>
-                                <div className="space-y-2">
-                                    <h5 className="text-1xl font-semibold text-black">
-                                        Communications
-                                    </h5>
-                                    <p className="text-[#000000A3]">
-                                        Our platforms helps to keep close contact with attendees pre and post event, to keep attendees updated, answer questions, resolve any issue before, during or after an event and get adequate feedbacks.
-                                    </p>
+                                
+                                {/* Desktop detailed sections - hidden on mobile */}
+                                <div className="hidden md:block space-y-6">
+                                    <div className="space-y-2">
+                                        <h5 className="text-1xl font-semibold text-black">
+                                            Attendees
+                                        </h5>
+                                        <p className="text-[#000000A3]">
+                                            Monitor attendees registration, ticket sales, RSVPs and be sure of who is attending your event.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h5 className="text-1xl font-semibold text-black">
+                                            Check-Ins
+                                        </h5>
+                                        <p className="text-[#000000A3]">
+                                            Control large crowds on-site with our fast check-in badges, or QR-codes and avoid long queues. Have your event perfectly coordinated.
+                                        </p>
+                                    </div>
+                                    <div className="space-y-2">
+                                        <h5 className="text-1xl font-semibold text-black">
+                                            Communications
+                                        </h5>
+                                        <p className="text-[#000000A3]">
+                                            Our platforms helps to keep close contact with attendees pre and post event, to keep attendees updated, answer questions, resolve any issue before, during or after an event and get adequate feedbacks.
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
 
@@ -835,19 +852,28 @@ function AboutSection() {
                     </div>
 
                     {/* Responsive Hoverable Boxes Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-8">
-                        {boxesData.map((box) => {
+                    <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 md:gap-8">
+                        {boxesData.map((box, index) => {
                             const FeatureIconUrl = box.icon;
+                            // Pinterest-style masonry using margin-top
+                            const marginTops = ['mt-0', 'mt-4', 'mt-0', 'mt-8', 'mt-2', 'mt-6', 'mt-1', 'mt-4', 'mt-3', 'mt-2', 'mt-6', 'mt-1', 'mt-4', 'mt-8', 'mt-0', 'mt-5'];
+                            const marginClass = marginTops[index] || 'mt-0';
                             return (
-                                <div key={box.id} className="group bg-white p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100">
-                                    <div className="text-center">
+                                <div 
+                                    key={box.id} 
+                                    className={`group bg-white p-2 md:p-8 rounded-xl shadow-lg hover:shadow-2xl transform hover:-translate-y-2 transition-all duration-300 cursor-pointer border border-gray-100 flex flex-col h-[240px] md:h-auto ${marginClass} md:mt-0`}
+                                    style={{}}
+                                >
+                                    <div className="text-center ">
                                         <div className="w-16 h-16 flex items-center justify-center mx-auto mb-2  transition-colors duration-300">
                                             <LazyImage src={`${FeatureIconUrl}`} className="w-8 h-8 text-white transition-colors duration-300" alt='Teps features' />
                                         </div>
-                                        <h3 className="text-[14px] font-bold text-black mb-1">{box.title}</h3>
-                                        <p className="text-[#000000A3] text-[12px] ">
-                                            {box.description}
-                                        </p>
+                                        <div className="flex-1 flex flex-col justify-center">
+                                            <h3 className="text-[14px] font-bold text-black mb-1">{box.title}</h3>
+                                            <p className="text-[#000000A3] text-[12px] line-clamp-4">
+                                                {box.description}
+                                            </p>
+                                        </div>
                                     </div>
                                 </div>
                             );
@@ -884,25 +910,25 @@ function AboutSection() {
 
                         {/* Second part - YouTube Video */}
                         <div className="relative">
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+                            <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6">
                                 {/* First column, first row - elevated on md+ */}
-                                <div className="md:-translate-y-8 transition-transform duration-300 hover:scale-105 hover:-translate-y-12">
-                                    <img src="/built_1.svg" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                                <div className="-translate-y-8 transition-transform duration-300 hover:scale-105 hover:-translate-y-12">
+                                    <img src="/nb1.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
                                 </div>
 
                                 {/* Second column, first row - normal */}
                                 <div className="transition-transform duration-300 hover:scale-105 hover:translate-x-4">
-                                    <img src="/built_2.png" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                                    <img src="/built_2.png" alt="Teps youtube video" className="w-full h-auto rounded-lg transition-shadow duration-300" />
                                 </div>
 
                                 {/* First column, second row - elevated and shifted left on md+ */}
-                                <div className="md:-translate-y-8 md:-translate-x-4 transition-transform duration-300 hover:scale-105 hover:-translate-x-8">
-                                    <img src="/built_3.png" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                                <div className="-translate-y-8 md:-translate-x-4 transition-transform duration-300 hover:scale-105 hover:-translate-x-8">
+                                    <img src="/nb3.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
                                 </div>
 
                                 {/* Second column, second row - shifted left on md+ */}
                                 <div className="md:-translate-x-4 transition-transform duration-300 hover:scale-105 hover:translate-y-4">
-                                    <img src="/built_4.svg" alt="Teps youtube video" className="w-full h-auto rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300" />
+                                    <img src="/nb4.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
                                 </div>
                             </div>
                         </div>
@@ -910,7 +936,7 @@ function AboutSection() {
                 </div>
             </section>
 
-            {/* Blue Background Carousel Section */}
+            {/* Case studies Section */}
             <section className="bg-[#1082df] py-16 md:py-24 relative">
                 <div className="absolute right-0 top-0 h-full">
                     <img src="/case_slant_1.svg" alt="" className="h-full object-cover" />
