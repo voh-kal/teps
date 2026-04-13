@@ -537,12 +537,12 @@ function AboutSection() {
                                 </a>
                             </div>
                         </div>
-
+{/* https://youtube.com/shorts/StBds_xNJvM?si=r5RCY9ISH8_eeXrW */}
                         {/* Second part - YouTube Video */}
                         <div className="relative">
                             <div className="cursor-pointer transition-transform hover:scale-105" onClick={openVideoModal}>
                                 <div className="relative">
-                                    <LazyImage src="https://img.youtube.com/vi/WY0mbKFuG_o/maxresdefault.jpg" alt="Teps youtube video" className="w-full h-auto rounded-lg" />
+                                    <LazyImage src="https://img.youtube.com/vi/StBds_xNJvM/maxresdefault.jpg" alt="Teps youtube video" className="w-full h-auto rounded-lg" />
                                     {/* Play Button */}
                                     <div className="absolute -left-5 top-1/2 transform -translate-y-1/2 w-10 h-10 bg-orange-500 rounded-full flex items-center justify-center shadow-lg hover:bg-orange-600 transition-colors duration-300">
                                         <svg className="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
@@ -1037,7 +1037,7 @@ function AboutSection() {
                         {/* Video Container */}
                         <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
                             <iframe
-                                src="https://www.youtube.com/embed/WY0mbKFuG_o?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1"
+                                src="https://www.youtube.com/embed/StBds_xNJvM?autoplay=0&mute=0&controls=1&rel=0&modestbranding=1"
                                 title="TEPS Video"
                                 className="absolute top-0 left-0 w-full h-full"
                                 frameBorder="0"
