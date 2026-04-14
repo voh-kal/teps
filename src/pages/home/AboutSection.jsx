@@ -915,7 +915,7 @@ function AboutSection() {
                             <div className="grid grid-cols-2 md:grid-cols-2 gap-4 md:gap-6">
                                 {/* First column, first row - elevated on md+ */}
                                 <div className="-translate-y-8 transition-transform duration-300 hover:scale-105 hover:-translate-y-12">
-                                    <img src="/nb1.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
+                                    <img src="/nba1.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
                                 </div>
 
                                 {/* Second column, first row - normal */}
@@ -930,7 +930,7 @@ function AboutSection() {
 
                                 {/* Second column, second row - shifted left on md+ */}
                                 <div className="md:-translate-x-4 transition-transform duration-300 hover:scale-105 hover:translate-y-4">
-                                    <img src="/nb4.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
+                                    <img src="/nba4.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
                                 </div>
                             </div>
                         </div>
