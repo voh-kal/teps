@@ -9,10 +9,10 @@ function Hero() {
     // Array of background images
     const backgroundImages = [
         '/case_studies_1.png',
-        '/case_studies_2.svg',
-        '/event_2.png',
-        '/case_studies_4.svg',
-        '/case_studies_5.svg',
+        // '/case_studies_2.svg',
+        // '/event_2.png',
+        // '/case_studies_4.svg',
+        // '/case_studies_5.svg',
     ];
 
     useEffect(() => {
@@ -38,22 +38,23 @@ function Hero() {
             {/* Current Background Image (base layer) */}
             <div 
                 className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-                style={{ backgroundImage: `url('${backgroundImages[currentBgIndex]}')` }}
+                 style={{ backgroundImage: `url('/case_studies_1.png')` }}
+                // style={{ backgroundImage: `url('${backgroundImages[currentBgIndex]}')` }}
             >
                 {/* Dark overlay for current image */}
                 <div className="absolute inset-0 bg-black opacity-80"></div>
             </div>
 
             {/* Next Background Image (slides up from bottom) */}
-            <div 
+            {/* <div 
                 className={`absolute inset-0 bg-cover bg-top bg-no-repeat transform transition-transform duration-500 ease-in-out ${
                     isTransitioning ? 'translate-y-0' : 'translate-y-full'
                 }`}
                 style={{ backgroundImage: `url('${backgroundImages[nextBgIndex]}')` }}
             >
-                {/* Dark overlay for next image */}
+                
                 <div className="absolute inset-0 bg-black opacity-80"></div>
-            </div>
+            </div> */}
 
             {/* Content - Fixed position, doesn't move with background */}
             <div className="max-w-7xl mx-auto px-6 md:px-8 text-center relative z-20 space-y-14">

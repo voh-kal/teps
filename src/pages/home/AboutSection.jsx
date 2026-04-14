@@ -333,11 +333,11 @@ function AboutSection() {
     const [submitMessage, setSubmitMessage] = useState('');
 
     const backgroundImages = [
-        '/case_studies_1.png',
-        '/case_studies_2.svg',
+        '/cs4.png',
         '/event_2.png',
-        '/case_studies_4.svg',
-        '/case_studies_5.svg',
+        '/cs1.png',
+        '/cs2.png',
+        '/cs3.png',
     ];
 
     // Auto-slide background images
@@ -592,7 +592,8 @@ function AboutSection() {
                             <div className="group text-center space-y-4 p-6 bg-[#3AA0FF] rounded-lg transform transition-all duration-500 hover:-translate-y-4 hover:shadow-xl cursor-pointer">
                                 <div className="flex justify-center mb-4">
                                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                                        <QrCode className="w-8 h-8 text-[#3AA0FF] transition-all duration-500" />
+                                        <img src="/QrCode.svg" alt="" className='text-[#3AA0FF] transition-all duration-500 w-8 h-8 ' />
+                                        {/* <QrCode className="w-8 h-8 text-[#3AA0FF] transition-all duration-500" /> */}
                                     </div>
                                 </div>
                                 <h3 className="text-md font-bold text-white mb-1 ">QR Code Integration</h3>
@@ -605,7 +606,8 @@ function AboutSection() {
                             <div className="group text-center space-y-4 p-6 bg-[#3AA0FF] rounded-lg transform transition-all duration-500 hover:-translate-y-4 hover:shadow-xl cursor-pointer">
                                 <div className="flex justify-center mb-4">
                                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                                        <Tag className="w-8 h-8 text-[#3AA0FF] transition-all duration-500" />
+                                        {/* <Tag className="w-8 h-8 text-[#3AA0FF] transition-all duration-500" /> */}
+                                        <img src="/tag.svg" alt="" className='text-[#3AA0FF] transition-all duration-500 w-8 h-8 ' />
                                     </div>
                                 </div>
                                 <h3 className="text-[16px] font-bold text-white mb-1">Access Wrist Tags</h3>
@@ -618,7 +620,7 @@ function AboutSection() {
                             <div className="group text-center space-y-4 p-6 bg-[#3AA0FF] rounded-lg transform transition-all duration-500 hover:-translate-y-4 hover:shadow-xl cursor-pointer">
                                 <div className="flex justify-center mb-4">
                                     <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center transition-all duration-500 group-hover:scale-110">
-                                        <img src="/accreditation.svg" alt="Exhibitor Accreditation" className="w-8 h-8 transition-all duration-500" />
+                                        <img src="/calendar-edit.svg" alt="Exhibitor Accreditation" className="w-8 h-8 transition-all duration-500" />
 
                                     </div>
                                 </div>
@@ -918,12 +920,12 @@ function AboutSection() {
 
                                 {/* Second column, first row - normal */}
                                 <div className="transition-transform duration-300 hover:scale-105 hover:translate-x-4">
-                                    <img src="/built_2.png" alt="Teps youtube video" className="w-full h-auto rounded-lg transition-shadow duration-300" />
+                                    <img src="/exhibitions.png" alt="Teps youtube video" className="w-full h-auto rounded-lg transition-shadow duration-300" />
                                 </div>
 
                                 {/* First column, second row - elevated and shifted left on md+ */}
                                 <div className="-translate-y-8 md:-translate-x-4 transition-transform duration-300 hover:scale-105 hover:-translate-x-8">
-                                    <img src="/nb3.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
+                                    <img src="/socials.png" alt="Teps youtube video" className="w-full h-auto rounded-lg  transition-shadow duration-300" />
                                 </div>
 
                                 {/* Second column, second row - shifted left on md+ */}
