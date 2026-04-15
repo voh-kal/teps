@@ -334,8 +334,9 @@ function AboutSection() {
 
     const backgroundImages = [
         '/cs4.png',
-        '/event_2.png',
-        '/cs1.png',
+        // '/event_2.png',
+        '/new_alte.png',
+        // '/cs1.png',
         '/cs2.png',
         '/cs3.png',
     ];
