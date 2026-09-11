@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import config from '../../config/api';
 
-function BlogSection() {
+function BlogSection({ year = 'All' }) {
     const [currentPage, setCurrentPage] = useState(1);
     const [blogs, setBlogs] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -46,7 +46,8 @@ function BlogSection() {
                         slug: createSlug(resource.topic),
                         excerpt: resource.description ? stripHtml(resource.description).substring(0, 150) + '...' : 'No description available',
                         fullContent: resource.description,
-                        is_pinned: resource.is_pinned
+                        is_pinned: resource.is_pinned,
+                        year: resource.created_at ? new Date(resource.created_at).getFullYear().toString() : null
                     }));
                     
                     // Sort by pinned first, then by ID
@@ -60,7 +61,7 @@ function BlogSection() {
                 } else {
                     setError('Failed to fetch blogs');
                 }
-            } catch (err) {
+            } catch {
                 setError('Network error while fetching blogs');
             } finally {
                 setLoading(false);
@@ -70,10 +71,16 @@ function BlogSection() {
         fetchBlogs();
     }, []);
 
-    // Calculate pagination
-    const totalPages = Math.ceil(blogs.length / itemsPerPage);
+    // Reset to page 1 whenever the year filter changes
+    useEffect(() => {
+        setCurrentPage(1);
+    }, [year]);
+
+    // Filter by year, then paginate
+    const filteredBlogs = year === 'All' ? blogs : blogs.filter(blog => blog.year === year);
+    const totalPages = Math.ceil(filteredBlogs.length / itemsPerPage);
     const startIndex = (currentPage - 1) * itemsPerPage;
-    const currentBlogs = blogs.slice(startIndex, startIndex + itemsPerPage);
+    const currentBlogs = filteredBlogs.slice(startIndex, startIndex + itemsPerPage);
 
     const goToPage = (page) => {
         setCurrentPage(page);
@@ -99,7 +106,11 @@ function BlogSection() {
 
     return (
         <section className="py-16 md:py-24">
-            <div className="max-w-6xl mx-auto px-6 md:px-8">
+            <div className="max-w-7xl mx-auto px-6 md:px-8">
+                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-8">
+                    {year === 'All' ? 'All Blog Archive' : `${year} Archive`}
+                </h2>
+
                 {/* Loading State */}
                 {loading && (
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
@@ -121,8 +132,8 @@ function BlogSection() {
                             <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                             </svg>
-                            <h3 className="text-xl font-semibold mb-2">Failed to Load Blogs</h3>
-                            <p className="text-gray-600 mb-4">{error}</p>
+                            <h3 className="text-xl font-semibold dark:text-white mb-2">Failed to Load Blogs</h3>
+                            <p className="text-gray-600 dark:text-white mb-4">{error}</p>
                             <button 
                                 onClick={() => window.location.reload()}
                                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
@@ -134,7 +145,7 @@ function BlogSection() {
                 )}
 
                 {/* Blog Grid */}
-                {!loading && !error && blogs.length > 0 && (
+                {!loading && !error && filteredBlogs.length > 0 && (
                     <>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                             {currentBlogs.map((blog) => (
@@ -176,10 +187,10 @@ function BlogSection() {
 
                                     {/* Blog Content */}
                                     <div className="py-6">
-                                        <h3 className="text-xl font-bold text-gray-900 mb-3 line-clamp-2">
+                                        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 line-clamp-2">
                                             {blog.title}
                                         </h3>
-                                        <p className="text-gray-600 mb-4 leading-relaxed line-clamp-3">
+                                        <p className="text-gray-600 dark:text-white mb-4 leading-relaxed line-clamp-3">
                                             {blog.excerpt}
                                         </p>
                                         
@@ -247,14 +258,16 @@ function BlogSection() {
                 )}
 
                 {/* No Blogs State */}
-                {!loading && !error && blogs.length === 0 && (
+                {!loading && !error && filteredBlogs.length === 0 && (
                     <div className="text-center py-12">
                         <div className="text-gray-500 mb-4">
                             <svg className="w-16 h-16 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10a2 2 0 012 2v1m2 13a2 2 0 01-2-2V7m2 13a2 2 0 002-2V9a2 2 0 00-2-2h-2m-4-3H9M7 16h6M7 8h6v4H7V8z" />
                             </svg>
-                            <h3 className="text-xl font-semibold mb-2">No Blogs Available</h3>
-                            <p className="text-gray-600">Check back later for new content.</p>
+                            <h3 className="text-xl font-semibold dark:text-white mb-2">No Blogs Available</h3>
+                            <p className="text-gray-600 dark:text-white">
+                                {year === 'All' ? 'Check back later for new content.' : `No blog posts found for ${year}.`}
+                            </p>
                         </div>
                     </div>
                 )}

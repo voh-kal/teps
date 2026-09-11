@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Link, useLocation } from 'react-router-do
 import { useEffect, Suspense, lazy } from 'react';
 import Preloader from './components/Preloader';
 import ReactGA from 'react-ga4';
+import { ThemeProvider } from './ThemeContext.jsx'
 
 // Lazy load components for better performance
 const Home = lazy(() => import('./pages/home/Index'));
@@ -44,6 +45,21 @@ export const trackPageView = (path) => {
   ReactGA.send({ hitType: "pageview", page: path });
 };
 
+// Scrolls to the top of the page on every route change, so navigating to a new
+// page doesn't keep whatever scroll position you were at on the previous one.
+// Skipped when the URL carries a hash (e.g. "/#faq") so pages that scroll to a
+// specific section on load (see home/Index.jsx) aren't fought over.
+function ScrollToTop() {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) return;
+    window.scrollTo(0, 0);
+  }, [pathname, hash]);
+
+  return null;
+}
+
 // Component to handle page tracking
 function PageTracker() {
   const location = useLocation();
@@ -65,24 +81,27 @@ function App() {
   }, []);
 
   return (
-    <BrowserRouter>
-      <PageTracker />
-      <Preloader />
-      <Suspense fallback={<Preloader />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/blog/:slug" element={<BlogPost />} />
-            <Route path="/case-studies" element={<CaseStudies />} />
-            <Route path="/privacy-policy" element={<Privacy />} />
-            <Route path="/sso/callback" element={<SsoCallback />} />
-            <Route path="/create-event" element={<CreateEvent />} />
-            {/* Catch-all route for 404 errors */}
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-      </Suspense>
-    </BrowserRouter>
+    <ThemeProvider>
+      <BrowserRouter>
+        <ScrollToTop />
+        <PageTracker />
+        <Preloader />
+        <Suspense fallback={<Preloader />}>
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/about" element={<About />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/case-studies" element={<CaseStudies />} />
+              <Route path="/privacy-policy" element={<Privacy />} />
+              <Route path="/sso/callback" element={<SsoCallback />} />
+              <Route path="/create-event" element={<CreateEvent />} />
+              {/* Catch-all route for 404 errors */}
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+        </Suspense>
+      </BrowserRouter>
+    </ThemeProvider>
   );
 }
 

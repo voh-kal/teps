@@ -1,12 +1,13 @@
 import { useState } from 'react';
+import { createPortal } from 'react-dom';
 
 function ScheduleDemo({ isOpen, onClose }) {
     const [iframeLoaded, setIframeLoaded] = useState(false);
 
     if (!isOpen) return null;
 
-    return (
-        <div 
+    return createPortal(
+        <div
             className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50"
             onClick={onClose}
         >
@@ -55,7 +56,8 @@ function ScheduleDemo({ isOpen, onClose }) {
                 </div>
 
             </div>
-        </div>
+        </div>,
+        document.body
     );
 }
 

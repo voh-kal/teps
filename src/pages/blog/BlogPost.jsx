@@ -1,7 +1,7 @@
 import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
-import Navbar from "../../components/Nav";
+import Navbar from "../../components/Navbar";
 import Hero from './Hero';
 import config from '../../config/api';
 
@@ -161,7 +161,6 @@ function BlogPost() {
         return (
             <div className='bg-[rgba(0,0,0,0.05)]'>
                 <Navbar />
-                <Hero />
                 <div className="min-h-screen">
                     <div className="max-w-7xl mx-auto px-6 md:px-8 py-8">
                         <div className="animate-pulse">
@@ -187,7 +186,6 @@ function BlogPost() {
         return (
             <div className='bg-[rgba(0,0,0,0.05)]'>
                 <Navbar />
-                <Hero header="THE EXPERIENCE PLUG SYSTEM  BLOG" subHeader="Your source for the latest news, insights, and updates from The Experience Plug System."/>
                 <div className="min-h-screen">
                     <div className="max-w-7xl mx-auto py-3 md:py-6">
                         <button
@@ -223,7 +221,6 @@ function BlogPost() {
         return (
             <div className='bg-[rgba(0,0,0,0.05)]'>
                 <Navbar />
-                <Hero  header="THE EXPERIENCE PLUG SYSTEM  BLOG" subHeader="Your source for the latest news, insights, and updates from The Experience Plug System." />
                 <div className="min-h-screen">
                     <div className="max-w-7xl mx-auto py-3 md:py-6">
                         <button
@@ -246,7 +243,6 @@ function BlogPost() {
     return (
         <div className='bg-[rgba(0,0,0,0.05)]'>
             <Navbar />
-            <Hero header="THE EXPERIENCE PLUG SYSTEM  BLOG" subHeader="Your source for the latest news, insights, and updates from The Experience Plug System." />
             <div className="min-h-screen pb-16  px-6 md:px-8">
                 {/* Header Section */}
                 <div className="max-w-7xl mx-auto py-3 md:py-6">

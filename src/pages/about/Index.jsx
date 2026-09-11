@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import ActionSection from "../../components/ActionSection";
-import Nav from "../../components/Nav";
+import Navbar from "../../components/Navbar";
 import Hero from "./Hero";
-import ContentSection from "./ContentSection";
+import WhySection from "./WhySection";
+import MissionSection from "./MissionSection";
+import OfferValuesSection from "./OfferValuesSection";
 import EventTypesSection from "./EventTypesSection";
 import Footer from "../../components/Footer";
 import ScheduleDemo from "../../components/ScheduleDemo";
@@ -12,15 +14,11 @@ function About() {
 
   return (
     <div className="bg-[#f2f2f2]">
-       <Nav></Nav>
+       <Navbar />
        <Hero/>
-       <ContentSection/>
-       <EventTypesSection/>
-       <ActionSection 
-         header="Ready to Create Something Amazing?" 
-         subheader="Let's discuss your vision and bring your dream event to life. Contact us today for a personalized consultation."
-         onScheduleDemo={() => setIsScheduleDemoOpen(true)}
-       />
+       <WhySection onScheduleDemo={() => setIsScheduleDemoOpen(true)} />
+       <MissionSection/>
+       <OfferValuesSection/>
        <Footer/>
        <ScheduleDemo 
          isOpen={isScheduleDemoOpen} 

@@ -1,11 +1,101 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Aileron:wght@100;200;300;400;500;600;700;800;900&display=swap'); */
-@import url('https://fonts.cdnfonts.com/css/aileron');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.cdnfonts.com/css/aileron'); */
 @import "tailwindcss";
 
-* {
-  font-family: 'Aileron', sans-serif;
-  
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-ink: #19213D;
+  --color-ink-2: #212B4A;
+  --color-paper: #FDFBF7;
+  --color-paper-2: #F3F1EC;
+  --color-blue: #3A72FF;
+  --color-blue-light: #7FA8FF;
+  --color-slate: #64748B;
+  --color-slate-light: #94A3B8;
 }
+
+::view-transition-group(*) {
+  animation-duration: 500ms;
+  animation-timing-function: ease;
+}
+
+
+@font-face {
+  font-family: "Degular";
+  src: url("./assets/fonts/DegularDemo-Regular.otf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("./assets/fonts/DegularDemo-Medium.otf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Degular";
+  src: url("./assets/fonts/DegularDemo-Bold.otf") format("opentype");
+  font-weight: 700;
+  font-style: normal;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: "Degular", sans-serif;
+  font-weight: 700;
+}
+
+.the_margin{
+    margin: 70px 0px
+}
+
+.the_hero{
+    height: 90vh;
+    z-index: 4;
+}
+
+.the_btn_width{
+    width: auto
+}
+
+.about_absolute{
+    position: absolute;
+    top: -170px;
+    left: 0px;
+    z-index: 0;
+}
+
+.about_absolute1{
+    position: absolute;
+    top: -116px;
+}
+
+.glass-card{
+    background: rgba(255, 255, 255, 0.12);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+@media (max-width: 768px) {
+    .the_hero{
+        height: 100vh;
+    }
+}
+
+@media (max-width: 500px) {
+    .the_btn_width{
+        width: stretch;
+    }
+}
+
+
 @keyframes infinite-scroll {
     from {
         transform: translateX(0);
@@ -33,4 +123,104 @@
 
 .animate-infinite-scroll:hover {
     animation-play-state: paused;
+}
+
+@keyframes marquee {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-marquee {
+    animation: marquee 30s linear infinite;
+    will-change: transform;
+}
+
+.animate-marquee:hover {
+    animation-play-state: paused;
+}
+
+.animate-marquee-slow {
+    animation: marquee 5s linear infinite;
+    will-change: transform;
+}
+
+.animate-marquee-slow:hover {
+    animation-play-state: paused;
+}
+
+@keyframes card-bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-14px);
+    }
+}
+
+.animate-card-bounce {
+    animation: card-bounce 3s ease-in-out infinite;
+}
+
+/* Notification pop-in sequence around the phone mockup: 9s loop.
+   0-2s phone only, 2s/3s/4s notify1/2/3 pop out one after another,
+   they hold together until 7s, fade out by 7.5s, stay hidden until the 9s loop repeats. */
+@keyframes notify1-pop {
+    0%, 22.2% {
+        opacity: 0;
+        transform: translateX(-15%) scale(0.5);
+    }
+    27.8%, 77.8% {
+        opacity: 1;
+        transform: translateX(-15%) scale(1);
+    }
+    83.3%, 100% {
+        opacity: 0;
+        transform: translateX(-15%) scale(0.5);
+    }
+}
+
+@keyframes notify2-pop {
+    0%, 33.3% {
+        opacity: 0;
+        transform: translateX(15%) scale(0.5);
+    }
+    38.9%, 77.8% {
+        opacity: 1;
+        transform: translateX(15%) scale(1);
+    }
+    83.3%, 100% {
+        opacity: 0;
+        transform: translateX(15%) scale(0.5);
+    }
+}
+
+@keyframes notify3-pop {
+    0%, 44.4% {
+        opacity: 0;
+        transform: translateX(-10%) scale(0.5);
+    }
+    50%, 77.8% {
+        opacity: 1;
+        transform: translateX(-10%) scale(1);
+    }
+    83.3%, 100% {
+        opacity: 0;
+        transform: translateX(-10%) scale(0.5);
+    }
+}
+
+.animate-notify1 {
+    animation: notify1-pop 9s ease-in-out infinite;
+}
+
+.animate-notify2 {
+    animation: notify2-pop 9s ease-in-out infinite;
+}
+
+.animate-notify3 {
+    animation: notify3-pop 9s ease-in-out infinite;
 }

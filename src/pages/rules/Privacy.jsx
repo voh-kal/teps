@@ -2,17 +2,18 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Nav";
 import Hero from "../blog/Hero";
 import { useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 function Privacy() {
     useEffect(() => {
         // Smooth scrolling for table of contents links
-        const tocLinks = document.querySelectorAll('.table-of-contents a[href^="#"]');
+        const tocLinks = document.querySelectorAll('.table-of-contents a[to^="#"]');
         
         tocLinks.forEach(link => {
             link.addEventListener('click', function(e) {
                 e.preventDefault();
                 
-                const targetId = this.getAttribute('href').substring(1);
+                const targetId = this.getAttribute('to').substring(1);
                 const targetElement = document.getElementById(targetId);
                 
                 if (targetElement) {
@@ -46,7 +47,7 @@ function Privacy() {
                     });
                     
                     // Add active class to current section link
-                    const activeLink = document.querySelector(`.table-of-contents a[href="#${entry.target.id}"]`);
+                    const activeLink = document.querySelector(`.table-of-contents a[to="#${entry.target.id}"]`);
                     if (activeLink) {
                         activeLink.classList.add('text-blue-600', 'font-semibold');
                         activeLink.style.backgroundColor = 'rgba(16, 130, 223, 0.1)';
@@ -86,24 +87,24 @@ function Privacy() {
                             <div className="bg-gray-50 p-6 rounded-lg border border-gray-200">
                                 <h3 className="text-xl font-semibold text-gray-900 mb-4">Table of Contents</h3>
                                 <ul className="space-y-2">
-                                    <li><a href="#introduction" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Introduction</a></li>
-                                    <li><a href="#consent" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Consent</a></li>
-                                    <li><a href="#data-collection" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Types of Personal Data We Collect</a></li>
-                                    <li><a href="#subscriber-content" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Subscriber Content</a></li>
-                                    <li><a href="#data-usage" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">How we use your Information</a></li>
-                                    <li><a href="#data-sharing" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">How we might share your Information</a></li>
-                                    <li><a href="#log-files" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Log Files</a></li>
-                                    <li><a href="#cookies" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Cookies and Web Beacons</a></li>
-                                    <li><a href="#third-party" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Third Party Privacy Policies</a></li>
-                                    <li><a href="#data-rights" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Data Protection Rights</a></li>
-                                    <li><a href="#data-security" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Data Security and Protection</a></li>
-                                    <li><a href="#data-transfers" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Data Transfers</a></li>
-                                    <li><a href="#data-retention" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Retention of your Personal Data</a></li>
-                                    <li><a href="#age-consent" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Age of Consent</a></li>
-                                    <li><a href="#children-info" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Children's Information</a></li>
-                                    <li><a href="#withdrawing-consent" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Withdrawing Consent</a></li>
-                                    <li><a href="#policy-changes" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Changes To This Privacy Policy</a></li>
-                                    <li><a href="#contact" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Contact Us</a></li>
+                                    <li><Link to="#introduction" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Introduction</Link></li>
+                                    <li><Link to="#consent" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Consent</Link></li>
+                                    <li><Link to="#data-collection" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Types of Personal Data We Collect</Link></li>
+                                    <li><Link to="#subscriber-content" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Subscriber Content</Link></li>
+                                    <li><Link to="#data-usage" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">How we use your Information</Link></li>
+                                    <li><Link to="#data-sharing" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">How we might share your Information</Link></li>
+                                    <li><Link to="#log-files" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Log Files</Link></li>
+                                    <li><Link to="#cookies" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Cookies and Web Beacons</Link></li>
+                                    <li><Link to="#third-party" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Third Party Privacy Policies</Link></li>
+                                    <li><Link to="#data-rights" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Data Protection Rights</Link></li>
+                                    <li><Link to="#data-security" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Data Security and Protection</Link></li>
+                                    <li><Link to="#data-transfers" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Data Transfers</Link></li>
+                                    <li><Link to="#data-retention" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Retention of your Personal Data</Link></li>
+                                    <li><Link to="#age-consent" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Age of Consent</Link></li>
+                                    <li><Link to="#children-info" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Children's Information</Link></li>
+                                    <li><Link to="#withdrawing-consent" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Withdrawing Consent</Link></li>
+                                    <li><Link to="#policy-changes" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Changes To This Privacy Policy</Link></li>
+                                    <li><Link to="#contact" className="block text-gray-600 hover:text-blue-600 transition-colors py-1">Contact Us</Link></li>
                                 </ul>
                             </div>
                         </div>

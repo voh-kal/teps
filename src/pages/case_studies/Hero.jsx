@@ -1,73 +1,104 @@
+import { useState } from "react";
+import { IconArrowRight } from "../../components/Icons";
+import { caseStudies } from "../../data/caseStudies";
+import CaseStudyModal from "./CaseStudyModal";
 
-import { useState, useEffect } from 'react';
+function Hero({ onScheduleDemo }) {
+  const [selectedCase, setSelectedCase] = useState(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+  const alteCase = caseStudies.find((study) => study.id === 1);
+  const demoDayCase = caseStudies.find((study) => study.id === 2);
 
-function Hero() {
-    const [currentBgIndex, setCurrentBgIndex] = useState(0);
-    const [nextBgIndex, setNextBgIndex] = useState(1);
-    const [isTransitioning, setIsTransitioning] = useState(false);
-    
-    // Array of background images
-    const backgroundImages = [
-        '/case_studies_1.png',
-        // '/case_studies_2.svg',
-        // '/event_2.png',
-        // '/case_studies_4.svg',
-        // '/case_studies_5.svg',
-    ];
+  const openCaseModal = (id) => {
+    const match = caseStudies.find((study) => study.id === id);
+    if (match) setSelectedCase(match);
+  };
 
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setIsTransitioning(true);
-            
-            // Calculate next image index
-            const nextIndex = (currentBgIndex + 1) % backgroundImages.length;
-            setNextBgIndex(nextIndex);
-            
-            // After transition completes, update current image
-            setTimeout(() => {
-                setCurrentBgIndex(nextIndex);
-                setIsTransitioning(false);
-            }, 500); // Full transition duration
-        }, 5000);
-
-        return () => clearInterval(interval);
-    }, [currentBgIndex, backgroundImages.length]);
-
-    return (
-        <div className="relative overflow-hidden py-36">
-            {/* Current Background Image (base layer) */}
-            <div 
-                className="absolute inset-0 bg-cover bg-top bg-no-repeat"
-                 style={{ backgroundImage: `url('/case_studies_1.png')` }}
-                // style={{ backgroundImage: `url('${backgroundImages[currentBgIndex]}')` }}
-            >
-                {/* Dark overlay for current image */}
-                <div className="absolute inset-0 bg-black opacity-80"></div>
-            </div>
-
-            {/* Next Background Image (slides up from bottom) */}
-            {/* <div 
-                className={`absolute inset-0 bg-cover bg-top bg-no-repeat transform transition-transform duration-500 ease-in-out ${
-                    isTransitioning ? 'translate-y-0' : 'translate-y-full'
-                }`}
-                style={{ backgroundImage: `url('${backgroundImages[nextBgIndex]}')` }}
-            >
-                
-                <div className="absolute inset-0 bg-black opacity-80"></div>
-            </div> */}
-
-            {/* Content - Fixed position, doesn't move with background */}
-            <div className="max-w-7xl mx-auto px-6 md:px-8 text-center relative z-20 space-y-14">
-                <div className="w-[119px] mx-auto">
-                    <img src="/teps_logo.svg" alt="TEPS Logo" className="w-full" />
-                </div>
-
-                <div className=" max-w-3xl mx-auto">
-                    <h1 className="text-3xl md:text-5xl font-bold text-white ">Experience the Power of TEPS in Action</h1>
-                </div>
-            </div>
+  return (<>
+    <section className="relative isolate overflow-hidden bg-white py-24 transition-colors duration-300 dark:bg-[#202020]">
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute bottom-0 left-0 -z-10 h-[500px] w-[500px] -translate-x-1/2 translate-y-1/2 rounded-full bg-blue/40 blur-[110px]"
+      />
+      <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-4 lg:px-10">
+        {/* left column */}
+        <div className="relative z-10 max-w-lg">
+          <span className="inline-block rounded-full bg-blue/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-blue">
+            Case Study
+          </span>
+          <h2 className="mt-5 font-display text-3xl font-semibold text-black dark:text-white sm:text-4xl">
+            Wondering if you can use TEPS for your events?
+          </h2>
+          <p className="mt-5 text-base leading-relaxed text-black dark:text-white">
+            Discover how TEPS helps event organizers simplify planning, management, and delivery through one connected platform. From registration and ticketing to attendee engagement, vendor coordination, and event operations, TEPS brings every essential process together. Explore real-world case studies showing how organizations, event managers, and agencies use TEPS to streamline workflows, improve attendee experiences, and gain better visibility throughout their events. See how TEPS supports the entire event journey, helping teams stay organized, work smarter, engage audiences effectively, and make informed decisions before, during, and after every event.
+          </p>
+          <button
+            type="button"
+            onClick={onScheduleDemo}
+            className="mt-8 inline-flex items-center justify-center rounded-[12px] bg-black px-7 py-3.5 text-sm font-semibold text-white transition-colors dark:bg-white dark:text-black"
+          >
+            Schedule a Demo
+          </button>
         </div>
-    );
+
+        {/* right column: stacked case study preview cards */}
+        <div className="relative flex w-full flex-col gap-4 lg:pl-10">
+          <div
+            onMouseEnter={() => setActiveIndex(0)}
+            className={`group relative w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-[height] duration-500 ease-out ${
+              activeIndex === 0 ? 'h-[364px]' : 'h-[153px]'
+            }`}
+            style={{ backgroundImage: `url(${alteCase?.image})` }}
+          >
+            <div className="absolute inset-0 bg-black/45" />
+            <div className="relative flex h-full items-end justify-between gap-4 p-6">
+              <span className="w-[80%] text-lg font-semibold text-white">
+                {alteCase?.title}
+              </span>
+              <button
+                type="button"
+                onClick={() => openCaseModal(1)}
+                aria-label="View case study"
+                className="flex h-11 w-11 shrink-0 -rotate-45 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-0"
+              >
+                <IconArrowRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+
+          <div
+            onMouseEnter={() => setActiveIndex(1)}
+            className={`group relative w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-[height] duration-500 ease-out ${
+              activeIndex === 1 ? 'h-[364px]' : 'h-[153px]'
+            }`}
+            style={{ backgroundImage: `url(${demoDayCase?.image})` }}
+          >
+            <div className="absolute inset-0 bg-black/45" />
+            <div className="relative flex h-full items-end justify-between gap-4 p-6">
+              <span className="w-[80%] text-lg font-semibold text-white">
+                {demoDayCase?.title}
+              </span>
+              <button
+                type="button"
+                onClick={() => openCaseModal(2)}
+                aria-label="View case study"
+                className="flex h-11 w-11 shrink-0 -rotate-45 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-0"
+              >
+                <IconArrowRight className="h-5 w-5" />
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    {selectedCase && (
+      <CaseStudyModal
+        caseStudy={selectedCase}
+        onClose={() => setSelectedCase(null)}
+      />
+    )}
+  </>);
 }
 
 export default Hero;

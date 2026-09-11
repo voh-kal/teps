@@ -9,6 +9,7 @@ const config = {
     RESOURCE_BY_ID: '/api/v1/landing-page/resource', // Will be used as /resource/{id}
     LOG_IN: '/',
     SIGN_UP: '/pages/signup',
+    UPCOMING_EVENT: '/api/v1/landing-page/upcoming-events', 
   },
   
   // Helper function to get full API URL

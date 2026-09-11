@@ -1,132 +1,107 @@
 import { X, MapPin, Clock } from 'lucide-react';
 import LazyImage from '../../components/LazyImage';
 
+function SectionHeading({ children }) {
+    return (
+        <h4 className="inline-block border-b-2 border-blue pb-1 text-base font-semibold text-blue">
+            {children}
+        </h4>
+    );
+}
+
 function CaseStudyModal({ caseStudy, onClose }) {
     const modalData = caseStudy.modalData;
+    const tepsWay = [modalData.teps, modalData.collaboration].filter(Boolean).join('\n\n');
 
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-2 sm:p-4">
-            <div className="bg-white rounded-lg max-w-6xl w-full max-h-[95vh] sm:max-h-[90vh] mx-2 sm:mx-4">
-                {/* Modal Header */}
-                <div className="flex justify-end p-3 sm:p-4">
-                    <button
-                        onClick={onClose}
-                        className="bg-gray-200 text-black hover:text-gray-700 transition-colors rounded-full p-2"
-                    >
-                        <X size={16}/>
-                    </button>
-                </div>
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/70 p-2 sm:p-4">
+            <div className="relative w-full max-w-2xl">
+                <button
+                    onClick={onClose}
+                    aria-label="Close"
+                    className="absolute right-3 top-3 z-20 flex h-9 w-9 items-center justify-center rounded-full bg-black/70 text-white transition-colors hover:bg-black"
+                >
+                    <X size={18} />
+                </button>
 
-                {/* Modal Content */}
-                <div className="p-3 sm:p-4 grid grid-cols-1 lg:grid-cols-3 gap-4 sm:gap-6 lg:gap-8 h-[calc(95vh-60px)] sm:h-[calc(90vh-80px)] overflow-hidden">
-                    {/* Left Column (1/3) */}
-                    <div className="lg:col-span-1 space-y-4 sm:space-y-6">
-                        {/* Case Study Image */}
-                        <div>
-                            <LazyImage 
-                                src={modalData.image} 
-                                alt={modalData.title}
-                                className="w-full h-[200px] sm:h-[250px] lg:h-[293px] object-cover rounded-lg"
-                            />
-                        </div>
-
-                        {/* Host Information */}
-                        {/* <div>
-                            <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                                Hosted by
-                            </h3>
-                            <hr className="border-gray-300 mb-4" />
-                            
-                           
-                            <div className="flex items-center space-x-3">
-                                <LazyImage 
-                                    src={modalData.hostImage} 
-                                    alt={modalData.hostName}
-                                    className="w-12 h-12 rounded-full object-cover"
-                                />
-                                <span className="text-gray-800 font-medium">
-                                    {modalData.hostName}
-                                </span>
-                            </div>
-                        </div> */}
+                <div className="max-h-[95vh] w-full overflow-y-auto rounded-2xl bg-white dark:bg-[#161616]">
+                    {/* banner image with title overlay */}
+                    <div className="relative h-56 w-full overflow-hidden rounded-t-2xl sm:h-64">
+                        <LazyImage
+                            src={modalData.image}
+                            alt={modalData.title}
+                            className="h-full w-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/75 via-black/20 to-black/40" />
+                        <h2 className="absolute inset-x-6 bottom-6 text-center font-display text-2xl font-bold leading-tight text-white sm:text-3xl">
+                            {modalData.title}
+                        </h2>
                     </div>
 
-                    {/* Right Column (2/3) - Scrollable */}
-                    <div className="lg:col-span-2 space-y-4 sm:space-y-6 overflow-y-auto pr-1 sm:pr-2">
-                        {/* Title and Description */}
-                        <div>
-                            <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">
-                                {modalData.title}
-                            </h2>
-                        </div>
+                    <div className="p-6 sm:p-8">
+                        <h3 className="text-lg font-bold text-ink dark:text-white">About Event</h3>
+                        <p className="mt-2 text-sm leading-relaxed text-slate dark:text-white/70">
+                            {modalData.setting}
+                        </p>
 
-                        {/* Event Details */}
-                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
-                            {/* Location */}
-                            <div className="flex items-center space-x-2 sm:space-x-3">
-                                <MapPin size={18} className="text-gray-500 flex-shrink-0" />
-                                <span className="text-sm sm:text-base text-gray-700">{modalData.location}</span>
+                        <div className="mt-4 flex flex-wrap items-center gap-x-6 gap-y-2">
+                            <div className="flex items-center gap-2">
+                                <MapPin size={16} className="shrink-0 text-blue" />
+                                <span className="text-sm text-slate dark:text-white/80">{modalData.location}</span>
                             </div>
-
-                            {/* Time */}
-                            <div className="flex items-center space-x-2 sm:space-x-3">
-                                <Clock size={18} className="text-gray-500 flex-shrink-0" />
-                                <span className="text-sm sm:text-base text-gray-700">{modalData.time}</span>
+                            <div className="flex items-center gap-2">
+                                <Clock size={16} className="shrink-0 text-blue" />
+                                <span className="text-sm text-slate dark:text-white/80">{modalData.time}</span>
                             </div>
                         </div>
 
-                        <div>
-                            <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-gray-900 mb-3 sm:mb-4 text-center">
-                                {modalData.subtitle}
-                            </h2>
-                            <hr className="border-gray-300" />
-                        </div>
+                        <hr className="my-6 border-ink/10 dark:border-white/10" />
 
-                        <div>
-                            <h4 className='text-base sm:text-lg font-semibold text-gray-900 mb-2'>Setting the Stage</h4>
-                            <p className="text-sm sm:text-base text-[#000000A3] leading-relaxed">{modalData.setting}</p>
-                        </div>
+                        <h2 className="text-center font-display text-xl font-bold leading-snug text-ink dark:text-white sm:text-2xl">
+                            {modalData.subtitle}
+                        </h2>
 
-                        <div>
-                            <h4 className='text-base sm:text-lg font-semibold text-gray-900 mb-2'>The Challenge</h4>
-                            <p className="text-sm sm:text-base text-[#000000A3] leading-relaxed">{modalData.challenge}</p>
-                        </div>
-
-                        <div>
-                            <h4 className='text-base sm:text-lg font-bold text-blue-600 mb-2'>TEPS</h4>
-                            <p className="text-sm sm:text-base text-[#000000A3] whitespace-pre-line leading-relaxed">{modalData.teps}</p>
-                        </div>
-
-                         <div>
-                            <h4 className='text-base sm:text-lg font-semibold text-gray-900 mb-2'>Collaboration in Action</h4>
-                            <p className="text-sm sm:text-base text-[#000000A3] whitespace-pre-line leading-relaxed">{modalData.collaboration}</p>
-                        </div>
-
-                         <div>
-                            <h4 className='text-base sm:text-lg font-semibold text-gray-900 mb-2'>Results and Insights</h4>
-                            <p className="text-sm sm:text-base text-[#000000A3] whitespace-pre-line leading-relaxed">{modalData.result}</p>
-                        </div>
-
-                         <div>
-                            <h4 className='text-base sm:text-lg font-semibold text-gray-900 mb-2'>Takeaway</h4>
-                            <p className="text-sm sm:text-base text-[#000000A3] leading-relaxed">{modalData.takeaway}</p>
-                        </div>
-
-                        {/* Event Images */}
-                        {modalData.eventImages && modalData.eventImages.length > 0 && (
+                        <div className="mt-6 space-y-6">
                             <div>
-                                <h4 className="text-base sm:text-lg font-semibold text-gray-900 mb-3 sm:mb-4">
-                                    Event Gallery
-                                </h4>
-                                <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 sm:gap-3 lg:gap-4">
+                                <SectionHeading>The Challenge</SectionHeading>
+                                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate dark:text-white/70">
+                                    {modalData.challenge}
+                                </p>
+                            </div>
+
+                            <div>
+                                <SectionHeading>TEPS Way</SectionHeading>
+                                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate dark:text-white/70">
+                                    {tepsWay}
+                                </p>
+                            </div>
+
+                            <div>
+                                <SectionHeading>The result</SectionHeading>
+                                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate dark:text-white/70">
+                                    {modalData.result}
+                                </p>
+                            </div>
+
+                            <div>
+                                <SectionHeading>The takeaway:</SectionHeading>
+                                <p className="mt-2 whitespace-pre-line text-sm leading-relaxed text-slate dark:text-white/70">
+                                    {modalData.takeaway}
+                                </p>
+                            </div>
+                        </div>
+
+                        {modalData.eventImages && modalData.eventImages.length > 0 && (
+                            <div className="mt-8">
+                                <h4 className="mb-4 text-lg font-bold text-ink dark:text-white">Photo Highlights</h4>
+                                <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
                                     {modalData.eventImages.map((image, index) => (
-                                        <div key={index}>
-                                            <LazyImage 
-                                                src={image} 
-                                                alt={`Event ${index + 1}`}
-                                                className="w-full h-[120px] sm:h-[150px] lg:h-[172px] object-cover rounded-lg hover:opacity-80 transition-opacity cursor-pointer"
-                                            />
-                                        </div>
+                                        <LazyImage
+                                            key={index}
+                                            src={image}
+                                            alt={`Event ${index + 1}`}
+                                            className="h-[110px] w-full rounded-lg object-cover sm:h-[130px]"
+                                        />
                                     ))}
                                 </div>
                             </div>
