@@ -54,7 +54,7 @@ export default function AllInSection() {
         <div className="grid grid-cols-1 gap-16 lg:grid-cols-2 items-center">
           {/* left column */}
           <div>
-            <span className="inline-block rounded-full bg-blue/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-blue">
+            <span className="inline-flex items-center rounded-full bg-blue px-5 py-4 text-xs font-semibold tracking-wide text-white">
               All-In
             </span>
             <h2 className="mt-5 font-display text-4xl font-bold leading-[1.08] text-ink dark:text-paper sm:text-5xl">
@@ -100,7 +100,7 @@ export default function AllInSection() {
         </div>
 
         {/* peeking cards: only the top peeks out by default, hover grows the window to reveal more */}
-        <div style={{ width: '75%' }}>
+        <div className="hidden sm:block" style={{ width: '75%' }}>
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-3 sm:gap-4">
             {PEEK_CARDS.map((card) => (
               <div key={card.title} className="relative mx-auto h-20 w-full">
