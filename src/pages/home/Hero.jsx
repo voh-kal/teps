@@ -42,7 +42,7 @@ export default function Hero({ onScheduleDemo }) {
       <div className="relative z-10 w-full px-6 pb-20 sm:pb-0 lg:px-10">
         <div className="mx-auto w-full max-w-7xl">
           
-          <h1 className=" text-white max-w-3xl font-display text-[42px] leading-[1.08] font-semibold text-paper sm:text-[56px] lg:text-[64px]">
+          <h1 className=" text-white mt-4 max-w-3xl font-display text-[42px] leading-[1.08] font-semibold text-paper sm:text-[56px] lg:text-[64px]">
             The Infrastructure Behind
             <br />
             Seamless Events.
