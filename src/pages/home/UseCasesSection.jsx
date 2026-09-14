@@ -79,7 +79,7 @@ export default function UseCasesSection() {
           {PANELS.map((panel) => (
             <div
               key={panel.title}
-              className="relative h-72 w-full overflow-hidden rounded-2xl border-2"
+              className="relative min-h-72 w-full overflow-hidden rounded-2xl border-2"
               style={{ borderColor: panel.borderColor }}
             >
               <img src={panel.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
