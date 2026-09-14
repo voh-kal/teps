@@ -74,7 +74,7 @@ h1, h2, h3, h4, h5 {
 
 .about_absolute1{
     position: absolute;
-    top: -20px;
+    top: -3px;
     left: 0px;
     right: 0px;
     z-index: 0;
@@ -86,7 +86,7 @@ h1, h2, h3, h4, h5 {
     }
 
     .about_absolute1{
-        top: -116px;
+        top: -5px;
     }
 }
 
