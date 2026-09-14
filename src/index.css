@@ -72,13 +72,20 @@ h1, h2, h3, h4, h5 {
     z-index: 0;
 }
 
+.about_absolute1{
+    position: absolute;
+    top: -20px;
+    left: 0px;
+    right: 0px;
+    z-index: 0;
+}
+
 @media (min-width: 640px) {
     .about_absolute{
         top: -170px;
     }
 
     .about_absolute1{
-        position: absolute;
         top: -116px;
     }
 }

@@ -41,13 +41,13 @@ const PEEK_CARDS = [
 
 export default function AllInSection() {
   return (
-    <section id="all-in" className="relative isolate overflow-hidden bg-white pt-24 dark:bg-[#202020] transition-colors duration-300">
+    <section id="all-in" className="relative isolate overflow-hidden bg-white pt-12 dark:bg-[#202020] transition-colors duration-300 sm:pt-24">
       {/* image positioned at the top of the section */}
-      <div className="mx-auto mb-14 h-56 w-full overflow-hidden rounded-3xl sm:h-80 about_absolute1">
+      <div className="aspect-1320/103 max-h-56 overflow-hidden rounded-3xl about_absolute1">
         <img
           src="/top-image3.svg"
           alt="Delegates gathered on the main stage floor"
-          className="h-full w-full dark:invert"
+          className="h-full w-full object-cover dark:invert"
         />
       </div>
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
