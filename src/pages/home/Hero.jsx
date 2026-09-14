@@ -18,7 +18,7 @@ export default function Hero({ onScheduleDemo }) {
   }
 
   return (
-    <section className=" the_hero relative w-full overflow-hidden bg-ink">
+    <section className=" the_hero relative flex w-full items-center overflow-hidden bg-ink">
       {/* background video */}
       <video
         className="absolute inset-0 h-full w-full object-cover"
@@ -39,7 +39,7 @@ export default function Hero({ onScheduleDemo }) {
       <div className="absolute  from-black via-black/40 to-black/10" />
 
       {/* content */}
-      <div className="relative z-10 flex h-full flex-col justify-center px-6 pb-20 sm:pb-0 lg:px-10">
+      <div className="relative z-10 w-full px-6 pb-20 sm:pb-0 lg:px-10">
         <div className="mx-auto w-full max-w-7xl">
           
           <h1 className=" text-white max-w-3xl font-display text-[42px] leading-[1.08] font-semibold text-paper sm:text-[56px] lg:text-[64px]">
