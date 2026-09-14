@@ -13,14 +13,14 @@ export default function ShowcaseSection() {
   return (
     <section className="bg-paper py-24 dark:bg-[#202020] transition-colors duration-300 relative">
       {/* image positioned at the top of the section */}
-      <div className="mx-6 mb-14 aspect-1440/381 overflow-hidden rounded-3xl sm:mx-0 sm:w-full about_absolute">
+      <div className="mx-6 mb-14 aspect-1440/381 max-h-80 overflow-hidden rounded-3xl sm:mx-0 sm:w-full about_absolute">
         <img
           src="/top-image2.svg"
           alt="Delegates gathered on the main stage floor"
           className="h-full w-full object-cover dark:invert"
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-6 sm:mt-16 lg:mt-10">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-6 sm:mt-16 lg:mt-20">
         <div className="mx-auto max-w-7xl text-center">
           <h2 className="font-display text-3xl font-semibold text-ink dark:text-paper sm:text-5xl lg:text-[60px]">
             Everything You Need to Power Your Event.
