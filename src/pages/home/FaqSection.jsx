@@ -102,9 +102,9 @@ export default function FaqSection() {
           })}
         </div>
 
-        {/* white card straddling this section's bottom edge and the section below */}
-        <div className="relative -mb-24 mt-16 flex justify-center">
-          <div className="relative z-20 flex w-full max-w-2xl translate-y-1/2 flex-col items-center gap-5 rounded-3xl bg-white px-10 py-10 text-center shadow-2xl dark:bg-[#3A72FF]">
+        {/* white card straddling this section's bottom edge and the section below (sm+ only; stays fully inside the section on mobile) */}
+        <div className="relative mt-16 flex justify-center sm:-mb-24">
+          <div className="relative z-20 flex w-full max-w-2xl flex-col items-center gap-5 rounded-3xl bg-white px-10 py-10 text-center shadow-2xl dark:bg-[#3A72FF] sm:translate-y-1/2">
             <p className="text-base text-3xl sm:text-4xl font-semibold text-ink dark:text-white">Have a Question? Talk to TEPS.</p>
             <a
               href="#contact"
