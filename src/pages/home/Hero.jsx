@@ -39,7 +39,7 @@ export default function Hero({ onScheduleDemo }) {
       <div className="absolute  from-black via-black/40 to-black/10" />
 
       {/* content */}
-      <div className="relative z-10 flex h-full flex-col justify-center px-6 lg:px-10">
+      <div className="relative z-10 flex h-full flex-col justify-center px-6 pb-20 sm:pb-0 lg:px-10">
         <div className="mx-auto w-full max-w-7xl">
           
           <h1 className=" text-white max-w-3xl font-display text-[42px] leading-[1.08] font-semibold text-paper sm:text-[56px] lg:text-[64px]">
@@ -110,8 +110,8 @@ export default function Hero({ onScheduleDemo }) {
       </div>
 
       {/* sponsor marquee, bottom of hero */}
-      <div className="absolute bottom-0 z-10 border-paper/10 bg-[#00000099] py-5 w-full">
-        <div className="mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="absolute bottom-0 z-10 flex h-20 w-full items-center border-paper/10 bg-[#00000099]">
+        <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <div className="no-scrollbar flex overflow-hidden">
                 <div className="flex w-max shrink-0 animate-marquee items-center gap-16 pr-16">
                     {[...SPONSORS, ...SPONSORS].map((sponsor, i) => (
@@ -119,7 +119,7 @@ export default function Hero({ onScheduleDemo }) {
                         key={`${sponsor.name}-${i}`}
                         src={sponsor.src}
                         alt={sponsor.name}
-                        className=" w-auto shrink-0 object-contain transition-opacity "
+                        className="h-8 w-auto shrink-0 object-contain transition-opacity "
                     />
                     ))}
             </div>
