@@ -14,7 +14,7 @@ export default function ShowcaseSection() {
   return (
     <section className="bg-paper py-24 dark:bg-[#202020] transition-colors duration-300 relative">
       {/* image positioned at the top of the section */}
-      <div className="mx-auto mb-14 w-full overflow-hidden rounded-3xl sm:h-80 about_absolute">
+      <div className="mx-auto mb-14 h-56 w-full overflow-hidden rounded-3xl sm:h-80 about_absolute">
         <img
           src="/top-image2.svg"
           alt="Delegates gathered on the main stage floor"
@@ -22,11 +22,11 @@ export default function ShowcaseSection() {
         />
       </div>
       <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-16 lg:mt-10">  
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="font-display text-3xl font-semibold text-ink dark:text-paper sm:text-5xl">
+        <div className="mx-auto max-w-7xl text-center">
+          <h2 className="font-display text-[60px] font-semibold text-ink dark:text-paper">
             Everything You Need to Power Your Event.
           </h2>
-          <p className=" mx-24 mt-4 text-base leading-relaxed text-slate dark:text-white">
+          <p className=" mx-24 mt-4 max-w-4xl text-base leading-relaxed text-slate dark:text-white">
             From the opening keynote to the last closing set, every room is built for people
             to actually talk to each other. Here's a look at what last year felt like.
           </p>

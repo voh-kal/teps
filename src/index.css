@@ -64,16 +64,21 @@ h1, h2, h3, h4, h5 {
     width: auto
 }
 
-.about_absolute{
-    position: absolute;
-    top: -170px;
-    left: 0px;
-    z-index: 0;
-}
+/* the negative-offset "bleed over the section above" effect only makes sense
+   once the section above has settled into its desktop layout; on mobile it
+   was pulling the image out of flow entirely, leaving a blank gap behind it */
+@media (min-width: 640px) {
+    .about_absolute{
+        position: absolute;
+        top: -170px;
+        left: 0px;
+        z-index: 0;
+    }
 
-.about_absolute1{
-    position: absolute;
-    top: -116px;
+    .about_absolute1{
+        position: absolute;
+        top: -116px;
+    }
 }
 
 .glass-card{

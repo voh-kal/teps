@@ -43,7 +43,7 @@ export default function AllInSection() {
   return (
     <section id="all-in" className="relative isolate overflow-hidden bg-white pt-24 dark:bg-[#202020] transition-colors duration-300">
       {/* image positioned at the top of the section */}
-      <div className="mx-auto mb-14 w-full overflow-hidden rounded-3xl sm:h-80 about_absolute1">
+      <div className="mx-auto mb-14 h-56 w-full overflow-hidden rounded-3xl sm:h-80 about_absolute1">
         <img
           src="/top-image3.svg"
           alt="Delegates gathered on the main stage floor"

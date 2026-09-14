@@ -1,6 +1,6 @@
 export default function CtaBannerSection({ onScheduleDemo }) {
   return (
-    <section className="bg-white pb-24 pt-44 transition-colors duration-300">
+    <section className="bg-white pb-24 pt-16 transition-colors duration-300 lg:pt-44">
       <div className="mx-auto max-w-[1269px] px-6 lg:px-10">
         <div className="flex flex-col items-center lg:flex-row">
           {/* overlapping photo - sits above the card and is vertically centered against it */}

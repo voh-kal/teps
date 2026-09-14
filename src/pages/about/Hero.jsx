@@ -12,7 +12,7 @@ function Hero() {
                 <div className="py-12 md:py-16">
                     <h1 className="text-4xl md:text-7xl font-bold mb-8 text-white max-w-5xl mx-auto ">THE EXPERIENCE PLUG SYSTEM</h1>
                     <div className="mt-[3rem] space-y-[5rem]">
-                        <div className="h-16 flex items-center justify-center">
+                        <div className="flex items-center justify-center">
                            <p className='text-white max-w-3xl'>Your platform for seamless events, designed by event professionals for everyone; novice or experienced event organizers & owners. Our features include: ticketing, event registration, custom email marketing to attendees, RSVP management, Multiple information stored in Attendee Unique QR Codes, Dashboard for analytics and insights, and lots more</p>
                         </div>
                        

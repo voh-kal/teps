@@ -1,5 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Menu, X } from 'lucide-react'
 import { IconChevronDown, IconSun, IconMoon } from './Icons.jsx'
 import { useTheme } from '../ThemeContext.jsx'
 import ScheduleDemo from './ScheduleDemo.jsx'
@@ -74,11 +75,49 @@ function NavDropdown({ label, title, items, isOpen, onEnter, onLeave }) {
   )
 }
 
+function MobileAccordion({ label, items, isOpen, onToggle, onNavigate }) {
+  return (
+    <div className="border-b border-ink/8 dark:border-white/10">
+      <button
+        type="button"
+        onClick={onToggle}
+        className="flex w-full items-center justify-between py-3.5 text-sm font-medium text-ink dark:text-white"
+      >
+        {label}
+        <IconChevronDown
+          className={`h-4 w-4 transition-transform duration-200 ${isOpen ? 'rotate-180 text-blue' : ''}`}
+        />
+      </button>
+      <div className={`overflow-hidden transition-all duration-300 ${isOpen ? 'max-h-96 pb-3' : 'max-h-0'}`}>
+        <div className="flex flex-col gap-3">
+          {items.map((item) => (
+            <Link
+              key={item.label}
+              to={item.to}
+              onClick={onNavigate}
+              className="text-sm text-ink/70 dark:text-white/70 hover:text-blue transition-colors"
+            >
+              {item.label}
+            </Link>
+          ))}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Navbar() {
   const [openMenu, setOpenMenu] = useState(null)
   const [isScheduleDemoOpen, setIsScheduleDemoOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [openMobileSection, setOpenMobileSection] = useState(null)
   const { theme, toggleTheme } = useTheme()
   const closeTimeoutRef = useRef(null)
+
+  const closeMobileMenu = () => {
+    setIsMobileMenuOpen(false)
+    setOpenMobileSection(null)
+  }
 
   // small delay before closing so moving the mouse from the trigger down to the
   // fixed-position dropdown (which sits outside the trigger's own layout box)
@@ -131,7 +170,7 @@ export default function Navbar() {
             <button
               type="button"
               onClick={() => setIsScheduleDemoOpen(true)}
-              className="inline-flex items-center rounded-full border border-blue px-4 py-2 text-sm font-medium text-blue hover:bg-blue hover:text-white transition-colors"
+              className="hidden items-center rounded-full border border-blue px-4 py-2 text-sm font-medium text-blue transition-colors hover:bg-blue hover:text-white lg:inline-flex"
             >
               Schedule A Demo
             </button>
@@ -161,9 +200,68 @@ export default function Navbar() {
                 )}
               </span>
             </button>
+
+            <button
+              type="button"
+              onClick={() => setIsMobileMenuOpen((open) => !open)}
+              aria-label={isMobileMenuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isMobileMenuOpen}
+              className="flex h-9 w-9 items-center justify-center text-ink dark:text-white lg:hidden"
+            >
+              {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+            </button>
           </div>
         </div>
       </nav>
+
+      {/* mobile nav panel */}
+      <div
+        className={`overflow-hidden border-t border-ink/8 transition-all duration-300 dark:border-white/10 lg:hidden ${
+          isMobileMenuOpen ? 'max-h-[80vh] overflow-y-auto' : 'max-h-0 border-t-0'
+        }`}
+      >
+        <div className="px-6 py-2">
+          <MobileAccordion
+            label="Products"
+            items={PRODUCT_ITEMS}
+            isOpen={openMobileSection === 'product'}
+            onToggle={() => setOpenMobileSection((s) => (s === 'product' ? null : 'product'))}
+            onNavigate={closeMobileMenu}
+          />
+          <MobileAccordion
+            label="Resources"
+            items={RESOURCE_ITEMS}
+            isOpen={openMobileSection === 'resources'}
+            onToggle={() => setOpenMobileSection((s) => (s === 'resources' ? null : 'resources'))}
+            onNavigate={closeMobileMenu}
+          />
+          <Link
+            to="/about"
+            onClick={closeMobileMenu}
+            className="block border-b border-ink/8 py-3.5 text-sm font-medium text-ink dark:border-white/10 dark:text-white"
+          >
+            About Us
+          </Link>
+          <Link
+            to={config.getApiUrl(config.endpoints.LOG_IN)}
+            onClick={closeMobileMenu}
+            className="block py-3.5 text-sm font-medium text-ink dark:text-white sm:hidden"
+          >
+            Log in
+          </Link>
+
+          <button
+            type="button"
+            onClick={() => {
+              closeMobileMenu()
+              setIsScheduleDemoOpen(true)
+            }}
+            className="mt-3 mb-4 inline-flex w-full items-center justify-center rounded-full border border-blue px-4 py-2.5 text-sm font-medium text-blue transition-colors hover:bg-blue hover:text-white"
+          >
+            Schedule A Demo
+          </button>
+        </div>
+      </div>
 
       <ScheduleDemo isOpen={isScheduleDemoOpen} onClose={() => setIsScheduleDemoOpen(false)} />
     </header>

@@ -194,12 +194,12 @@ export default function PhasesSection() {
         className="pointer-events-none absolute left-1/2 top-0 -z-10 h-[520px] w-[520px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue/50 blur-[120px]"
       />
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-7xl text-center">
          
-          <h2 className="mt-5 font-display text-3xl font-semibold text-ink dark:text-paper sm:text-4xl">
+          <h2 className="mt-5 font-display text-[60px] font-semibold text-ink dark:text-paper">
             From Invitations To Insights
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-slate dark:text-slate-light">
+          <p className="mx-auto max-w-2xl mt-4 text-base leading-relaxed text-slate dark:text-slate-light">
             Great events don't happen by accident. Eventrix powers every stage — from the first save-the-date to the final attendee report — so you can focus on creating unforgettable experiences.
           </p>
         </div>

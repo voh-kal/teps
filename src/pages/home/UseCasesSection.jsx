@@ -74,7 +74,45 @@ export default function UseCasesSection() {
           </p>
         </div>
 
-        <div className="mt-14 flex h-[420px] gap-4 overflow-hidden rounded-3xl">
+        {/* mobile/tablet: a plain vertical stack, always expanded (no hover state to rely on) */}
+        <div className="mt-14 flex flex-col gap-4 lg:hidden">
+          {PANELS.map((panel) => (
+            <div
+              key={panel.title}
+              className="relative h-72 w-full overflow-hidden rounded-2xl border-2"
+              style={{ borderColor: panel.borderColor }}
+            >
+              <img src={panel.image} alt="" className="absolute inset-0 h-full w-full object-cover" />
+              <div className="absolute inset-0 bg-gradient-to-t from-ink via-ink/60 to-ink/10" />
+              <div className="relative z-10 flex h-full flex-col items-start p-6">
+                <img
+                  src={panel.logo}
+                  alt={`${panel.title} logo`}
+                  className="h-6 w-auto self-start object-contain"
+                />
+                <h3 className="mt-4 self-start font-display text-xl font-semibold text-white">
+                  {panel.title}
+                </h3>
+                <div className="mt-auto flex w-full min-w-0 items-end justify-between gap-4 self-stretch">
+                  <p className="min-w-0 text-sm leading-relaxed text-white/80">
+                    {panel.paragraph}
+                  </p>
+                  <button
+                    type="button"
+                    onClick={() => openCaseModal(panel.caseStudyId)}
+                    aria-label={`View case study: ${panel.title}`}
+                    className="flex h-9 w-9 shrink-0 -rotate-45 items-center justify-center rounded-full bg-white text-black transition-transform hover:rotate-0"
+                  >
+                    <IconArrowRight className="h-4 w-4" />
+                  </button>
+                </div>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {/* desktop: hover-to-expand accordion row */}
+        <div className="mt-14 hidden h-[420px] gap-4 overflow-hidden rounded-3xl lg:flex">
           {PANELS.map((panel, i) => {
             const isActive = i === activeIdx
             return (
