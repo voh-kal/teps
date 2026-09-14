@@ -56,7 +56,7 @@ function Testimonials({ testimonials = [], logos = [] }) {
             {/* infinite loop of client logos */}
             {logos.length > 0 && (
                 <div className="mt-16 overflow-hidden pt-4">
-                    <div className="flex shrink-0 animate-marquee items-center gap-16 pr-16">
+                    <div className="flex w-max shrink-0 animate-marquee items-center gap-16 pr-16">
                         {[...logos, ...logos].map((logo, i) => (
                             <img
                                 key={`${logo.name}-${i}`}

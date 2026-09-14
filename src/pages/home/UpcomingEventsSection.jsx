@@ -16,6 +16,11 @@ function getEventLink(event) {
   return `${config.API_BASE_URL}${path}`
 }
 
+function truncate(text, max = 20) {
+  if (!text) return text
+  return text.length > max ? `${text.slice(0, max)}…` : text
+}
+
 export default function UpcomingEventsSection() {
   const [events, setEvents] = useState([])
   const [loading, setLoading] = useState(true)
@@ -89,13 +94,13 @@ export default function UpcomingEventsSection() {
                 <div className="h-56 w-full overflow-hidden rounded-2xl">
                   <img src={event.image} alt={event.title} className="h-full w-full object-cover" />
                 </div>
-                <h3 className="mt-5 font-display text-xl font-semibold text-ink dark:text-white">{event.title}</h3>
+                <h3 className="mt-5 font-display text-xl font-semibold text-ink dark:text-white">{truncate(event.title)}</h3>
 
                 <div className="mt-4 flex items-center justify-between gap-4">
                   <div className="flex flex-col gap-2">
                     <div className="flex items-center gap-2 text-sm text-slate dark:text-white">
                       <IconMap className="h-4 w-4 shrink-0" />
-                      <span>{event.location}</span>
+                      <span>{truncate(event.location)}</span>
                     </div>
                     <div className="flex items-center gap-2 text-sm text-slate dark:text-white">
                       <IconCalendar className="h-4 w-4 shrink-0" />
@@ -107,7 +112,7 @@ export default function UpcomingEventsSection() {
                     href={getEventLink(event)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="inline-flex shrink-0 items-center justify-center rounded-full border border-black px-5 py-2 text-sm font-semibold text-black dark:border-white dark:text-white"
+                    className="inline-flex shrink-0 items-center justify-center rounded-full border border-black px-5 py-2 text-[10px] font-semibold text-black dark:border-white dark:text-white"
                   >
                     Visit Website
                   </a>

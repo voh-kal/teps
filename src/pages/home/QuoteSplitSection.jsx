@@ -1,3 +1,5 @@
+import { IconArrowRight } from '../../components/Icons.jsx'
+
 export default function QuoteSplitSection({ onScheduleDemo }) {
   return (
     <section className="relative isolate overflow-hidden py-24 dark:bg-[#131010f7] transition-colors duration-300">
@@ -8,7 +10,9 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-4 lg:px-10">
         {/* left column */}
         <div className="relative z-10 max-w-lg">
-         
+          <span className="inline-flex items-center rounded-full bg-blue px-5 py-4 text-xs font-semibold tracking-wide text-white">
+            For Event Pros
+          </span>
           <h2 className="mt-5 font-display text-3xl font-semibold text-ink dark:text-paper sm:text-4xl">
             Built for Organisations That Run Events.
           </h2>
@@ -18,9 +22,13 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
           <button
             type="button"
             onClick={onScheduleDemo}
-            className="mt-8 inline-flex items-center justify-center rounded-[12px] border border-blue bg-transparent px-7 py-3.5 text-sm font-semibold text-blue transition-colors hover:bg-blue hover:text-white"
+            className="group relative mt-8 inline-flex items-center justify-center gap-2 overflow-hidden rounded-[12px] border border-blue bg-transparent px-7 py-3.5 text-sm font-semibold text-blue"
           >
-            Book a Demo
+            <span className="absolute inset-0 -translate-x-full bg-white transition-transform duration-300 ease-out group-hover:translate-x-0" />
+            <span className="relative z-10 flex items-center gap-2">
+              Book a Demo
+              <IconArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
+            </span>
           </button>
         </div>
 

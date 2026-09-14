@@ -113,7 +113,7 @@ export default function Hero({ onScheduleDemo }) {
       <div className="absolute bottom-0 z-10 border-paper/10 bg-[#00000099] py-5 w-full">
         <div className="mx-auto max-w-7xl px-6 lg:px-10">
           <div className="no-scrollbar flex overflow-hidden">
-                <div className="flex shrink-0 animate-marquee items-center gap-16 pr-16">
+                <div className="flex w-max shrink-0 animate-marquee items-center gap-16 pr-16">
                     {[...SPONSORS, ...SPONSORS].map((sponsor, i) => (
                     <img
                         key={`${sponsor.name}-${i}`}

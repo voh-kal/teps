@@ -7,7 +7,6 @@ const GALLERY = [
   { src: '/event4.png', name: 'Event 4' },
   { src: '/event5.png', name: 'Event 5' },
   { src: '/event6.png', name: 'Event 6' },
-  { src: '/event7.png', name: 'Event 7' },
 ]
 
 export default function ShowcaseSection() {
@@ -34,7 +33,7 @@ export default function ShowcaseSection() {
 
         {/* infinitely scrolling image row */}
         <div className="mt-14 overflow-hidden pt-4">
-          <div className="flex shrink-0 animate-marquee-slow items-center gap-5 pr-5">
+          <div className="flex w-max shrink-0 animate-marquee-slow items-center gap-5 pr-5">
             {[...GALLERY, ...GALLERY].map((item, i) => (
               <div
                 key={`${item.name}-${i}`}

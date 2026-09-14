@@ -42,7 +42,7 @@ export default function TracksGridSection() {
     <section id="what-we-offer" className="py-24 dark:bg-black transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-6xl text-center">
-          <span className="inline-block rounded-full bg-blue px-5.5 py-2.5 text-[15px] tracking-[0.16em] text-white">
+          <span className="inline-block rounded-full bg-blue px-5.5 py-2.5 text-[15px]  text-white">
             what we offer
           </span>
           <h2 className="mt-5 mb-4 font-display text-4xl text-ink dark:text-paper sm:text-6xl">

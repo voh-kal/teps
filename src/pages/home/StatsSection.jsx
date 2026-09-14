@@ -129,7 +129,7 @@ export default function StatsSection() {
 
         {/* infinite logo marquee */}
         <div className="mt-16 overflow-hidden pt-12">
-          <div className="flex shrink-0 animate-marquee items-center gap-16 pr-16">
+          <div className="flex w-max shrink-0 animate-marquee items-center gap-16 pr-16">
             {[...LOGOS, ...LOGOS].map((logo, i) => (
               <img
                 key={`${logo.name}-${i}`}

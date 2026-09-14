@@ -205,7 +205,7 @@ export default function PhasesSection() {
         </div>
 
         {/* pill tabs */}
-        <div className="mx-auto mt-10 flex w-fit gap-1 rounded-full border border-ink/10 bg-white p-1">
+        <div className="mx-auto mt-10 flex w-fit gap-1 rounded-full border border-blue bg-white p-1">
           {TABS.map((t) => (
             <button
               key={t}
