@@ -11,9 +11,9 @@ const GALLERY = [
 
 export default function ShowcaseSection() {
   return (
-    <section className="bg-paper py-24 dark:bg-[#202020] transition-colors duration-300 relative">
+    <section className="relative bg-paper pb-24 pt-12 dark:bg-[#202020] transition-colors duration-300 sm:py-24">
       {/* image positioned at the top of the section */}
-      <div className="mx-6 mb-14 aspect-1440/381 max-h-80 overflow-hidden rounded-3xl sm:mx-0 sm:w-full about_absolute">
+      <div className="aspect-1440/381 max-h-80 overflow-hidden rounded-3xl about_absolute">
         <img
           src="/top-image2.svg"
           alt="Delegates gathered on the main stage floor"
