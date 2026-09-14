@@ -196,7 +196,7 @@ export default function PhasesSection() {
       <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-7xl text-center">
          
-          <h2 className="mt-5 font-display text-[60px] font-semibold text-ink dark:text-paper">
+          <h2 className="mt-5 font-display text-3xl font-semibold text-ink dark:text-paper sm:text-5xl lg:text-[60px]">
             From Invitations To Insights
           </h2>
           <p className="mx-auto max-w-2xl mt-4 text-base leading-relaxed text-slate dark:text-slate-light">
