@@ -46,7 +46,7 @@ function Hero({ onScheduleDemo }) {
           <div
             onMouseEnter={() => setActiveIndex(0)}
             className={`group relative w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-[height] duration-500 ease-out ${
-              activeIndex === 0 ? 'h-[364px]' : 'h-[153px]'
+              activeIndex === 0 ? 'h-[364px]' : 'min-h-38.25 sm:h-38.25'
             }`}
             style={{ backgroundImage: `url(${alteCase?.image})` }}
           >
@@ -69,7 +69,7 @@ function Hero({ onScheduleDemo }) {
           <div
             onMouseEnter={() => setActiveIndex(1)}
             className={`group relative w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-[height] duration-500 ease-out ${
-              activeIndex === 1 ? 'h-[364px]' : 'h-[153px]'
+              activeIndex === 1 ? 'h-[364px]' : 'min-h-38.25 sm:h-38.25'
             }`}
             style={{ backgroundImage: `url(${demoDayCase?.image})` }}
           >
