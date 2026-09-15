@@ -96,7 +96,7 @@ export default function FaqSection() {
                 return (
                   <div
                     key={faq.q}
-                    className={`rounded-2xl border-white/20 p-5 transition-colors duration-300 ${
+                    className={`flex min-h-20 flex-col justify-center rounded-2xl border-white/20 p-5 transition-colors duration-300 ${
                       isOpen ? 'bg-white' : 'bg-white/10'
                     }`}
                   >
