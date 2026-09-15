@@ -62,11 +62,11 @@ export default function UseCasesSection() {
   return (
     <section id="use-cases" className="bg-white py-24 transition-colors duration-300 dark:bg-[#202020]">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-2xl text-center">
+        <div className="mx-auto max-w-5xl text-center">
           <span className="inline-block rounded-full bg-blue px-4 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-white">
             Case Study
           </span>
-          <h2 className="text-[#000000] mt-5 mb-4 font-display text-3xl font-semibold text-ink sm:text-4xl dark:text-white">
+          <h2 className="text-[#000000] mt-5 mb-4 font-display text-4xl font-semibold text-ink sm:text-5xl dark:text-white">
             Trusted by Organisations That Delivers Exceptional Events
           </h2>
           <p className="text-[14px] text-[#000000] leading-relaxed text-slate dark:text-white">
@@ -176,10 +176,13 @@ export default function UseCasesSection() {
         <div className="mt-10 flex justify-center">
           <Link
             to="/case-studies"
-            className="inline-flex items-center gap-2 rounded-[15px] border border-black bg-transparent px-7 py-3.5 text-sm font-semibold text-ink transition-colors hover:bg-black hover:text-white dark:border-white dark:text-white dark:hover:bg-white dark:hover:text-ink"
+            className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[15px] border border-black px-7 py-3.5 text-sm font-semibold text-ink dark:border-white dark:text-white"
           >
-            View Case Studies
-            <IconArrowRight className="h-4 w-4" />
+            <span className="absolute inset-0 -translate-x-full bg-black transition-transform duration-300 ease-out group-hover:translate-x-0 dark:bg-white" />
+            <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-white dark:group-hover:text-ink">
+              View Case Studies
+              <IconArrowRight className="h-4 w-4" />
+            </span>
           </Link>
         </div>
       </div>
