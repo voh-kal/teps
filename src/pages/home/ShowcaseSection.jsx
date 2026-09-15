@@ -20,7 +20,7 @@ export default function ShowcaseSection() {
           className="h-full w-full object-cover dark:invert"
         />
       </div>
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-6 sm:mt-16 lg:mt-20">
+      <div className="mx-auto max-w-7xl px-6 lg:px-10 mt-6 ">
         <div className="mx-auto max-w-7xl text-center">
           <h2 className="font-display text-3xl font-semibold text-ink dark:text-paper sm:text-5xl lg:text-[60px]">
             Everything You Need to Power Your Event.
@@ -31,8 +31,8 @@ export default function ShowcaseSection() {
           </p>
         </div>
 
-        {/* infinitely scrolling image row */}
-        <div className="mt-14 overflow-hidden pt-4">
+        {/* infinitely scrolling image row: breaks out of the max-w-7xl container to bleed full viewport width */}
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] mt-14 w-screen overflow-hidden pt-4">
           <div className="flex w-max shrink-0 animate-marquee-slow items-center gap-5 pr-5">
             {[...GALLERY, ...GALLERY].map((item, i) => (
               <div
