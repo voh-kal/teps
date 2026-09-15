@@ -36,7 +36,7 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
         <div className="relative lg:pl-10">
           <div className="h-[420px] w-full overflow-hidden rounded-3xl sm:h-[480px]">
             <img
-              src="/built1.svg"
+              src="/sasha.png"
               alt="Delegates talking between sessions"
               className="h-full w-full"
             />
@@ -45,7 +45,7 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
           {/* glass card, pulled left so it encroaches into the text column */}
           <div className="glass-card animate-card-bounce absolute -bottom-8 left-0 w-[88%] max-w-sm rounded-2xl p-6 shadow-2xl sm:left-6 lg:-left-16">
             <p className="text-[17px] italic leading-snug ">
-              “TEPS is redefining how events are planned and managed. Built to adapt to every event type.”
+              “TEPS handled the access and accreditation process for the Africa Live Entertainment Conference (ALEC), and the experience was excellent. They brought the organization, responsiveness, and on-the-ground adaptability that a live event demands, which made the process smooth for both our team and our attendees, and helped the whole event run seamlessly. I'd happily recommend TEPS to any organizer looking for a reliable access and event technology partner.”
             </p>
             <div className="mt-5 flex items-center gap-3">
               <img
@@ -54,8 +54,8 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
                 className="h-11 w-11 rounded-[50%] object-cover"
               />
               <div>
-                <p className="text-sm font-medium ">Tobi Olanihun</p>
-                <p className="text-xs">CEO, TEPS</p>
+                <p className="text-sm font-medium ">Sasha P.</p>
+                <p className="text-xs">Founder & Convener, ALEC | CEO, Purplefire Entertainment</p>
               </div>
             </div>
           </div>

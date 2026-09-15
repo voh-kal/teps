@@ -119,7 +119,7 @@ export default function Hero({ onScheduleDemo }) {
                         key={`${sponsor.name}-${i}`}
                         src={sponsor.src}
                         alt={sponsor.name}
-                        className="h-8 w-auto shrink-0 object-contain transition-opacity "
+                        className="h-11 w-auto shrink-0 object-contain transition-opacity "
                     />
                     ))}
             </div>

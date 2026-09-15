@@ -117,10 +117,10 @@ export default function StatsSection() {
                   <Icon className="h-5 w-5" />
                 </span>
                 <div className="flex flex-col items-center">
-                  <span className="font-display text-[64px] font-semibold text-[#3A72FF] sm:text-4xl ">
+                  <span className="text-[64px] font-semibold text-[#3A72FF]" style={{fontFamily:"Degular", marginBottom:"-10px"}}>
                     <CountUpNumber value={stat.value} suffix={stat.suffix} />
                   </span>
-                  <p className="mt-2 max-w-[150px] text-[14px] leading-relaxed text-slate dark:text-white">{stat.label}</p>
+                  <p className=" max-w-[150px] text-[14px] leading-relaxed text-slate dark:text-white">{stat.label}</p>
                 </div>
               </div>
             )
@@ -135,7 +135,7 @@ export default function StatsSection() {
                 key={`${logo.name}-${i}`}
                 src={logo.src}
                 alt={logo.name}
-                className="h-8 w-auto shrink-0 object-contain  transition-opacity hover:opacity-90"
+                className="h-11 w-auto shrink-0 object-contain  transition-opacity hover:opacity-90"
               />
             ))}
           </div>
