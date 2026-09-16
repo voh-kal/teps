@@ -67,7 +67,7 @@ export default function UseCasesSection() {
             Case Study
           </span>
           <h2 className="text-[#000000] mt-5 mb-4 font-display text-4xl font-semibold text-ink sm:text-5xl dark:text-white lg:text-[60px]">
-            Trusted by Organisations That Delivers Exceptional Events
+            Trusted Across Real-World Events
           </h2>
           <p className="text-[14px] text-[#000000] leading-relaxed text-slate dark:text-white">
             See how organisations have used TEPS to simplify event operations, improve guest experiences and gain greater visibility across their events.

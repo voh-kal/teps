@@ -12,8 +12,10 @@ function Footer(){
                             <img src="/teps_logo.svg" alt="TEPS Logo" className="w-24 h-24" />
                         </div>
                         <div>
+                            <h5 className='text-[#FFFFFFCF] text-[20px]'>THE EXPERIENCE PLUG SYSTEMS</h5>
                             <p className="text-gray-300 text-[13px] leading-relaxed">
-                                TEPS is short form for The Experience Plug systems. We are your platform for seamless events, designed by event professionals for everyone; novice or experienced event organizers & owners. Our features include: ticketing, event registration, custom email marketing to attendees, RSVP management, Multiple information stored in Attendee Unique QR Codes, Dashboard for analytics and insights, and lots more.
+                                The Infrastructure Behind Seamless Events <br />
+                                TEPS provides the connected systems behind modern events—from registration and ticketing to access control, engagement and Event Intelligence 
                             </p>
                         </div>
                     </div>
