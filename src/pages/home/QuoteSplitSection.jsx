@@ -17,7 +17,7 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
             Built for Organisations That Run Events.
           </h2>
           <p className="mt-5 text-base leading-relaxed text-slate dark:text-slate-light">
-            From conferences and exhibitions to concerts, weddings, and festivals, TEPS equips event organizers, agencies, venues, and enterprises with everything they need to plan, promote, manage, and measure successful events. Streamline operations, enhance attendee experiences, and grow your event business. All from one powerful event management platform.
+            From conferences and exhibitions to festivals, corporate programmes and celebrations, TEPS provides the infrastructure to plan, manage, engage and measure your events. Whether you run events year-round, manage multiple clients or deliver major one-off experiences, TEPS helps keep the systems behind your events connected.
           </p>
           <button
             type="button"
@@ -43,9 +43,9 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
           </div>
 
           {/* glass card, pulled left so it encroaches into the text column */}
-          <div className="glass-card animate-card-bounce absolute -bottom-8 left-0 w-[88%] max-w-sm rounded-2xl p-6 shadow-2xl sm:left-6 lg:-left-16">
-            <p className="text-[12px] italic leading-snug ">
-              “TEPS handled the access and accreditation process for the Africa Live Entertainment Conference (ALEC), and the experience was excellent. They brought the organization, responsiveness, and on-the-ground adaptability that a live event demands, which made the process smooth for both our team and our attendees, and helped the whole event run seamlessly. I'd happily recommend TEPS to any organizer looking for a reliable access and event technology partner.”
+          <div className="glass-card animate-card-bounce absolute -bottom-16 left-0 w-[88%] max-w-lg rounded-2xl p-6 shadow-2xl sm:left-6 lg:-left-16">
+            <p className="text-[11px] italic leading-snug dark:text-white">
+              “TEPS handled the access and accreditation process for the <b>Africa Live Entertainment Conference (ALEC)</b> , and the experience was excellent. They brought the organization, responsiveness, and on-the-ground adaptability that a live event demands, which made the process smooth for both our team and our attendees, and helped the whole event run seamlessly. I'd happily recommend TEPS to any organizer looking for a reliable access and event technology partner.”
             </p>
             <div className="mt-5 flex items-center gap-3">
               <img
@@ -54,8 +54,8 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
                 className="h-11 w-11 rounded-[50%] object-cover"
               />
               <div>
-                <p className="text-sm font-medium ">Sasha P.</p>
-                <p className="text-xs">Founder & Convener, ALEC | CEO, Purplefire Entertainment</p>
+                <p className="text-sm font-medium dark:text-white">Sasha P.</p>
+                <p className="text-xs dark:text-white">Founder & Convener, ALEC | CEO, Purplefire Entertainment</p>
               </div>
             </div>
           </div>
