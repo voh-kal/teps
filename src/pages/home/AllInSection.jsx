@@ -57,7 +57,7 @@ export default function AllInSection() {
             <span className="inline-flex items-center rounded-full bg-blue px-5 py-4 text-xs font-semibold tracking-wide text-white">
               All-In
             </span>
-            <h2 className="mt-5 font-display text-4xl font-bold leading-[1.08] text-ink dark:text-paper sm:text-5xl">
+            <h2 className="mt-5 font-display text-4xl font-bold leading-[1.08] text-ink dark:text-paper sm:text-5xl lg:text-[60px]">
               Experience The All-In Power Engagement
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-slate dark:text-white">

@@ -71,7 +71,7 @@ export default function TracksGridSection() {
                   <img
                     src={track.image}
                     alt=""
-                    className="h-full w-full  transition-transform duration-500 group-hover:scale-105"
+                    className="h-full w-full  transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>

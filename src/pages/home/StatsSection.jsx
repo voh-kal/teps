@@ -99,8 +99,8 @@ export default function StatsSection() {
   return (
     <section className="bg-[#F6F6F6] py-24 transition-colors duration-300 dark:bg-[#0F0F0F]">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
-        <div className="mx-auto max-w-3xl text-center">
-          <h2 className="font-display text-4xl font-semibold text-ink sm:text-5xl dark:text-white">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="font-display text-4xl font-semibold text-ink sm:text-5xl dark:text-white lg:text-[60px]">
             Proven Across Complex Events
           </h2>
           <p className="mt-4 text-[15px] leading-relaxed text-slate dark:text-white">

@@ -66,7 +66,7 @@ export default function UseCasesSection() {
           <span className="inline-block rounded-full bg-blue px-4 py-3.5 text-xs font-semibold uppercase tracking-[0.16em] text-white">
             Case Study
           </span>
-          <h2 className="text-[#000000] mt-5 mb-4 font-display text-4xl font-semibold text-ink sm:text-5xl dark:text-white">
+          <h2 className="text-[#000000] mt-5 mb-4 font-display text-4xl font-semibold text-ink sm:text-5xl dark:text-white lg:text-[60px]">
             Trusted by Organisations That Delivers Exceptional Events
           </h2>
           <p className="text-[14px] text-[#000000] leading-relaxed text-slate dark:text-white">

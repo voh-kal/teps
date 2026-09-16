@@ -16,7 +16,7 @@ const CONTENT = {
       icon: IconGlobe,
       title: 'Invitation',
       body: 'Make every invitation feel personal with beautifully branded designs tailored to your event. Reach guests instantly through emails and shareable links, monitor RSVPs in real time, automate reminders, and keep everyone informed from the first invite to event day. ',
-      image: '/r2.svg',
+      image: '/r2.png',
     },
     {
       icon: IconUsers,
@@ -28,7 +28,7 @@ const CONTENT = {
       icon: IconSparkline,
       title: 'Ticketing',
       body: 'Power every event with flexible ticketing solution designed to maximize registrations. Create tickets, set dynamic pricing, accept secure payments, monitor sales in real-time and deliver digital tickets through one seamless experience.',
-      image: '/r3.svg',
+      image: '/r3.png',
     },
     {
       icon: IconMic,
@@ -111,7 +111,7 @@ function PhaseCard({ data, expanded, onHover, viewTransitionName }) {
     <div
       onMouseEnter={onHover}
       style={{ viewTransitionName }}
-      className={`group relative flex flex-1 cursor-pointer flex-col overflow-hidden rounded-2xl border bg-white transition-all duration-500 ${
+      className={`group relative flex flex-1 cursor-pointer flex-col overflow-hidden rounded-[29px] border bg-white transition-all duration-500 ${
         expanded ? 'border-blue' : 'border-ink/8'
       } ${expanded ? 'p-6' : 'p-5'}`}
     >
