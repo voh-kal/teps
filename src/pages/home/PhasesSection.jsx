@@ -124,7 +124,7 @@ function PhaseCard({ data, expanded, onHover, viewTransitionName }) {
           <Icon className="h-5 w-5" />
         </span>
         <h3
-          className={`font-display text-[15px] font-semibold ${expanded ? 'text-blue' : 'text-ink'}`}
+          className={`font-display text-[18px] font-semibold ${expanded ? 'text-blue' : 'text-ink'}`}
         >
           {data.title}
         </h3>
@@ -200,12 +200,12 @@ export default function PhasesSection() {
             From Invitations To Insights
           </h2>
           <p className="mx-auto max-w-2xl mt-4 text-base leading-relaxed text-slate dark:text-slate-light">
-            Great events don't happen by accident. Eventrix powers every stage — from the first save-the-date to the final attendee report — so you can focus on creating unforgettable experiences.
+            TEPS connects the systems behind your event from the first invitation to post-event insights, helping your team stay organised, informed and in control
           </p>
         </div>
 
         {/* pill tabs */}
-        <div className="mx-auto mt-10 flex w-fit gap-1 rounded-full border border-blue bg-white p-1">
+        <div className="mx-auto mt-10 flex w-fit gap-1 rounded-full border border-blue bg-white p-1 shadow-xl">
           {TABS.map((t) => (
             <button
               key={t}

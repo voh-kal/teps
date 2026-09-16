@@ -10,9 +10,9 @@ export default function QuoteSplitSection({ onScheduleDemo }) {
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-4 lg:px-10">
         {/* left column */}
         <div className="relative z-10 max-w-lg">
-          <span className="inline-flex items-center rounded-full bg-blue px-5 py-4 text-xs font-semibold tracking-wide text-white">
+          {/* <span className="inline-flex items-center rounded-full bg-blue px-5 py-4 text-xs font-semibold tracking-wide text-white">
             For Event Pros
-          </span>
+          </span> */}
           <h2 className="mt-5 font-display text-3xl font-semibold text-ink dark:text-paper sm:text-4xl">
             Built for Organisations That Run Events.
           </h2>

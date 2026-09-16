@@ -58,7 +58,7 @@ export default function AllInSection() {
               All-In
             </span>
             <h2 className="mt-5 font-display text-4xl font-bold leading-[1.08] text-ink dark:text-paper sm:text-5xl lg:text-[60px]">
-              Experience The All-In Power Engagement
+              Event Engagement
             </h2>
             <p className="mt-6 max-w-md text-base leading-relaxed text-slate dark:text-white">
               TEPS powers the infrastructure. ALL-IN powers engagement. Together, they deliver one

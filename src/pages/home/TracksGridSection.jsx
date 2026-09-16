@@ -9,18 +9,18 @@ const TRACKS = [
     tag: 'Invite',
     title: 'Invitation & Registration Integrations',
     body: 'Manage invitations, RSVPs, registrations and ticketing.',
-    image: '/how2.svg',
+    image: '/how2.png',
   },
   {
     tag: 'Welcome',
-    title: 'Premium Access Control',
+    title: 'Access Control',
     body: 'Manage accreditation, access control and check-in with our fast onsite and self check-in software.',
     image: '/how3.svg',
   },
   {
     tag: 'Engage',
     title: 'All-In Event App',
-    body: 'Keep attendees informed and connected during live event with TEPS awesome ALL-IN App.',
+    body: 'Keep attendees informed, connected and engaged throughout the event with ALL-IN.',
     image: '/how4.svg',
   },
   {
@@ -42,9 +42,9 @@ export default function TracksGridSection() {
     <section id="what-we-offer" className="py-24 dark:bg-black transition-colors duration-300">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-6xl text-center">
-          <span className="inline-block rounded-full bg-blue px-5.5 py-2.5 text-[15px]  text-white">
+          {/* <span className="inline-block rounded-full bg-blue px-5.5 py-2.5 text-[15px]  text-white">
             what we offer
-          </span>
+          </span> */}
           <h2 className="mt-5 mb-4 font-display text-4xl text-ink dark:text-paper sm:text-6xl">
             How TEPS Works
           </h2>

@@ -33,19 +33,19 @@ const STATS = [
     icon: IconUsers,
     value: 100,
     suffix: '+',
-    label: 'Events hosted across 10 countries',
+    label: 'Events Powered',
   },
   {
     icon: IconGlobe,
     value: 50,
     suffix: '+',
-    label: 'Happy clients & organizations',
+    label: 'Clients',
   },
   {
     icon: IconCalendar,
     value: 20,
     suffix: 'k+',
-    label: 'Attendees managed',
+    label: 'Attendees Managed',
   },
   {
     icon: IconSparkline,

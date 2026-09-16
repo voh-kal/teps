@@ -52,12 +52,6 @@ export default function Hero({ onScheduleDemo }) {
            TEPS provides the connected systems behind your event. From invitations and registration to ticketing, access control, engagement and Event Intelligence. </p>
 
           <div className="the_margin flex flex-wrap items-center gap-4">
-            <a
-              href="#tickets"
-              className="the_btn_width inline-flex items-center justify-center rounded-[15px] bg-[#3A72FF] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#090949]"
-            >
-              Create Event
-            </a>
             <button
               type="button"
               onClick={onScheduleDemo}
@@ -65,6 +59,12 @@ export default function Hero({ onScheduleDemo }) {
             >
               Book a Demo
             </button>
+            <a
+              href="#tickets"
+              className="the_btn_width inline-flex items-center justify-center rounded-[15px] bg-[#3A72FF] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#090949]"
+            >
+              Create Event
+            </a>
           </div>
         </div>
       </div>
