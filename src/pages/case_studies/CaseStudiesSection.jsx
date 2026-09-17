@@ -24,12 +24,10 @@ function CaseStudiesSection() {
                 <div className="max-w-7xl mx-auto px-6 md:px-8">
                     {/* centralised header */}
                     <div className="text-center mb-16">
-                        <h2 className="text-3xl md:text-5xl font-bold text-black dark:text-white mb-4">
+                        <h2 className="text-3xl md:text-5xl lg:text-[60px] font-bold text-black dark:text-white mb-4">
                             Explore more success stories
                         </h2>
-                        <p className="text-[15px] text-black/60 dark:text-white/60 max-w-3xl mx-auto">
-                           It was a wonderful year with our esteemed partners
-                            </p>
+                     
                     </div>
 
                     {/* Case Study Cards */}
@@ -39,22 +37,15 @@ function CaseStudiesSection() {
                                 key={study.id}
                                 type="button"
                                 onClick={() => openModal(study)}
-                                className="group relative h-[598px] w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center text-left"
+                                className="group relative h-[300px] w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center text-left shadow-2xl sm:h-[360px] lg:h-[420px]"
                                 style={{ backgroundImage: `url(${study.image})` }}
                             >
-                                {/* dark overlay gradient, bottom to just above the text */}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/85 from-0% to-transparent to-45%" />
-
-                                {/* event logo, top left */}
-                                <img
-                                    src="/teps_logo.svg"
-                                    alt="Event logo"
-                                    className="absolute left-4 top-4 h-9 w-auto "
-                                />
+                                {/* flat dark overlay, matching the highlights carousel cards */}
+                                <div className="absolute inset-0 bg-black/45 transition-colors duration-300 group-hover:bg-black/60" />
 
                                 {/* title + see case study row, bottom */}
                                 <div className="absolute inset-x-0 bottom-0 p-5">
-                                    <h3 className="text-3xl font-semibold text-white" style={{lineHeight:"2rem"}}>
+                                    <h3 className="line-clamp-2 text-base font-semibold text-white sm:text-lg">
                                         {study.title}
                                     </h3>
                                     <div className="mt-3 flex items-center justify-end gap-2">
