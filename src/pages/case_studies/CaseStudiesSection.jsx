@@ -37,9 +37,15 @@ function CaseStudiesSection() {
                                 key={study.id}
                                 type="button"
                                 onClick={() => openModal(study)}
-                                className="group relative h-[300px] w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center text-left shadow-2xl sm:h-[360px] lg:h-[420px]"
-                                style={{ backgroundImage: `url(${study.image})` }}
+                                className="group relative h-[300px] w-full overflow-hidden rounded-3xl bg-ink text-left shadow-2xl sm:h-[360px] lg:h-[420px]"
                             >
+                                {/* background layer, isolated from the button box so the hover
+                                    zoom-out only scales the image, not the border/text/overlay */}
+                                <div
+                                    className="absolute inset-0 bg-cover bg-center transition-transform duration-500 ease-out group-hover:scale-110"
+                                    style={{ backgroundImage: `url(${study.image})` }}
+                                />
+
                                 {/* flat dark overlay, matching the highlights carousel cards */}
                                 <div className="absolute inset-0 bg-black/45 transition-colors duration-300 group-hover:bg-black/60" />
 
@@ -52,7 +58,7 @@ function CaseStudiesSection() {
                                         <span className="text-sm font-medium text-white">
                                             See Case Study
                                         </span>
-                                        <span className="flex h-9 w-9 shrink-0 -rotate-45 items-center justify-center rounded-full bg-white text-black transition-transform group-hover:rotate-0">
+                                        <span className="flex h-9 w-9 shrink-0 -rotate-45 items-center justify-center rounded-full bg-white text-black transition-all duration-300 group-hover:rotate-0 group-hover:bg-blue group-hover:text-white">
                                             <IconArrowRight className="h-4 w-4" />
                                         </span>
                                     </div>
