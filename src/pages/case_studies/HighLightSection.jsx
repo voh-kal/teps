@@ -79,19 +79,17 @@ function HighLightSection() {
         </div>
 
         {/* 3-card slider: broken out of the max-w-7xl container to the full viewport width
-            (full-bleed) so the side cards are pulled half-clipped exactly at the page's
-            left/right edges rather than an inner container's, no matter the viewport width */}
+            (full-bleed). Side cards sit a fixed 70px from the active card (not pinned to
+            the viewport edges), so on narrower large screens the shrink-0 cards overflow
+            this wrapper and get clipped symmetrically, while on very wide screens they
+            simply sit at that fixed 70px gap, fully visible. */}
         <div className="relative left-1/2 right-1/2 -mx-[50vw] mt-10 w-screen overflow-hidden">
-          <div className="flex items-center justify-center">
-            <Card item={activeItem} size="active" onClick={() => {}} />
-          </div>
-          <div className="pointer-events-none absolute inset-y-0 left-0 hidden items-center lg:flex">
-            <div className="pointer-events-auto -translate-x-1/3">
+          <div className="flex items-center justify-center gap-4 lg:gap-[70px]">
+            <div className="hidden lg:block">
               <Card item={prevItem} size="side" onClick={goPrev} />
             </div>
-          </div>
-          <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-center lg:flex">
-            <div className="pointer-events-auto translate-x-1/3">
+            <Card item={activeItem} size="active" onClick={() => {}} />
+            <div className="hidden lg:block">
               <Card item={nextItem} size="side" onClick={goNext} />
             </div>
           </div>
