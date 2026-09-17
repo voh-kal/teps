@@ -4,9 +4,9 @@ function CreateEventSection({ onScheduleDemo }) {
     return (
         <section
             className="relative isolate overflow-hidden bg-ink bg-cover bg-center py-20"
-            style={{ backgroundImage: "url(/built1.png)" }}
+            style={{ backgroundImage: "url(/bg.jpg)" }}
         >
-            <div className="absolute inset-0 bg-blue/80" />
+            <div className="absolute inset-0 bg-blue/95" />
             <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
                 <div className="flex flex-col items-start gap-8 lg:flex-row lg:items-center lg:justify-between">
                     <h2 className="font-display text-3xl font-semibold text-white sm:text-4xl">

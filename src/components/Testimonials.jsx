@@ -14,7 +14,7 @@ function Testimonials({ testimonials = [], logos = [] }) {
 
     return (
         <section className="bg-white py-24 transition-colors duration-300 dark:bg-[#0F0F0F]">
-            <div className="mx-auto max-w-4xl px-6 lg:px-10">
+            <div className="mx-auto max-w-4xl px-6 lg:px-10 pb-16">
                 <div className="flex items-center gap-4 sm:gap-8">
                     <button
                         type="button"
