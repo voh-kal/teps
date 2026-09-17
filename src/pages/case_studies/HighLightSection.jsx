@@ -9,16 +9,13 @@ const HIGHLIGHTS = [
   { image: "/event5.png", title: "Jameson Distillery Tour" },
 ];
 
-function Card({ item, size, onClick }) {
+function Card({ item, onClick }) {
   return (
     <button
       type="button"
       onClick={onClick}
-      className={`relative shrink-0 overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-all duration-500 ease-out shadow-2xl   ${
-        size === "active"
-          ? "h-[340px] w-[300px] sm:h-[370px] sm:w-[420px] lg:h-[400px] lg:w-[560px]"
-          : "hidden h-[300px] w-[220px] opacity-60 lg:block"
-      }`}
+      key={item.title}
+      className="animate-fade-in relative h-[300px] w-full overflow-hidden rounded-3xl bg-ink bg-cover bg-center shadow-2xl sm:h-[420px] lg:h-[560px]"
       style={{ backgroundImage: `url(${item.image})` }}
       aria-label={item.title}
     >
@@ -41,30 +38,28 @@ function HighLightSection() {
   const goPrev = () => goTo(activeIndex - 1);
   const goNext = () => goTo(activeIndex + 1);
 
-  const prevItem = HIGHLIGHTS[((activeIndex - 1) % total + total) % total];
   const activeItem = HIGHLIGHTS[activeIndex];
-  const nextItem = HIGHLIGHTS[(activeIndex + 1) % total];
 
   return (
     <section className="relative isolate overflow-hidden bg-[#3A72FF17] py-24 transition-colors duration-300 dark:bg-[#060617]">
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-10">
+      <div className="relative z-10 mx-auto max-w-5xl px-6 lg:px-10">
         {/* centered header */}
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-semibold text-black dark:text-white sm:text-5xl">
+          <h2 className="font-display text-3xl font-semibold text-black dark:text-white sm:text-5xl lg:text-[64px]">
             Event Highlights For You
           </h2>
-          <p className="mt-4 text-base leading-relaxed text-black/70 dark:text-white/70">
-            A closer look at the events TEPS has powered, in the words and moments of the people who were there.
-          </p>
+
         </div>
 
-        {/* controls above the slider, pinned to the extreme ends */}
-        <div className="mt-12 flex items-center justify-between">
+        {/* single full-width card, with prev/next arrows overlaid on its edges */}
+        <div className="relative mt-12">
+          <Card item={activeItem} onClick={() => {}} />
+
           <button
             type="button"
             onClick={goPrev}
             aria-label="Previous highlight"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-black transition-colors hover:bg-black hover:text-white dark:border-white/15 dark:text-white dark:hover:bg-white dark:hover:text-black"
+            className="absolute left-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
           >
             <IconChevronLeft className="h-5 w-5" />
           </button>
@@ -72,17 +67,10 @@ function HighLightSection() {
             type="button"
             onClick={goNext}
             aria-label="Next highlight"
-            className="flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-black transition-colors hover:bg-black hover:text-white dark:border-white/15 dark:text-white dark:hover:bg-white dark:hover:text-black"
+            className="absolute right-4 top-1/2 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full border border-white/30 bg-black/40 text-white backdrop-blur-sm transition-colors hover:bg-black/70"
           >
             <IconChevronRight className="h-5 w-5" />
           </button>
-        </div>
-
-        {/* 3-card slider, active card centered and enlarged */}
-        <div className="mt-10 flex items-center justify-center gap-4 lg:gap-6">
-          <Card item={prevItem} size="side" onClick={goPrev} />
-          <Card item={activeItem} size="active" onClick={() => {}} />
-          <Card item={nextItem} size="side" onClick={goNext} />
         </div>
 
         {/* indicator below the slider */}

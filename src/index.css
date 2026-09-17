@@ -179,6 +179,19 @@ h1, h2, h3, h4, h5 {
     animation: card-bounce 3s ease-in-out infinite;
 }
 
+@keyframes fade-in {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 0.4s ease-out;
+}
+
 /* Notification pop-in sequence around the phone mockup: 9s loop.
    0-2s phone only, 2s/3s/4s notify1/2/3 pop out one after another,
    they hold together until 7s, fade out by 7.5s, stay hidden until the 9s loop repeats. */
