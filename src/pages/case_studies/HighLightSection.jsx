@@ -17,7 +17,7 @@ function Card({ item, size, onClick }) {
       onClick={onClick}
       className={`relative shrink-0 overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-all duration-500 ease-out shadow-2xl   ${
         isActive
-          ? "h-95 w-85 sm:h-105 sm:w-120 lg:h-120 lg:w-170"
+          ? "h-95 w-85 border-[3px] border-blue sm:h-105 sm:w-120 lg:h-120 lg:w-170"
           : "h-90 w-65 opacity-60"
       }`}
       style={{ backgroundImage: `url(${item.image})` }}
@@ -86,12 +86,12 @@ function HighLightSection() {
             <Card item={activeItem} size="active" onClick={() => {}} />
           </div>
           <div className="pointer-events-none absolute inset-y-0 left-0 hidden items-center lg:flex">
-            <div className="pointer-events-auto -translate-x-1/2">
+            <div className="pointer-events-auto -translate-x-1/3">
               <Card item={prevItem} size="side" onClick={goPrev} />
             </div>
           </div>
           <div className="pointer-events-none absolute inset-y-0 right-0 hidden items-center lg:flex">
-            <div className="pointer-events-auto translate-x-1/2">
+            <div className="pointer-events-auto translate-x-1/3">
               <Card item={nextItem} size="side" onClick={goNext} />
             </div>
           </div>
