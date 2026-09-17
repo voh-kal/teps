@@ -10,21 +10,24 @@ const HIGHLIGHTS = [
 ];
 
 function Card({ item, size, onClick }) {
+  const isActive = size === "active"
   return (
     <button
       type="button"
       onClick={onClick}
       className={`relative shrink-0 overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-all duration-500 ease-out shadow-2xl   ${
-        size === "active"
-          ? "h-[340px] w-[300px] sm:h-[370px] sm:w-[420px] lg:h-[400px] lg:w-[560px]"
-          : "h-75 w-55 opacity-60"
+        isActive
+          ? "h-95 w-85 sm:h-105 sm:w-120 lg:h-120 lg:w-170"
+          : "h-90 w-65 opacity-60"
       }`}
       style={{ backgroundImage: `url(${item.image})` }}
       aria-label={item.title}
     >
-      <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
-        <IconPlay className="ml-1 h-6 w-6 text-white" />
-      </span>
+      {isActive && (
+        <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
+          <IconPlay className="ml-1 h-6 w-6 text-white" />
+        </span>
+      )}
       <span className="absolute inset-x-0 bottom-0 p-5 text-left text-base font-semibold text-white sm:text-lg">
         {item.title}
       </span>
@@ -75,10 +78,10 @@ function HighLightSection() {
           </button>
         </div>
 
-        {/* 3-card slider: side cards are centered exactly on this wrapper's left/right
-            edges (via translate-x ±50%) so overflow-hidden always clips them to precisely
-            half-visible, "peeking in" from off-page, no matter the viewport width */}
-        <div className="relative mt-10 overflow-hidden">
+        {/* 3-card slider: broken out of the max-w-7xl container to the full viewport width
+            (full-bleed) so the side cards are pulled half-clipped exactly at the page's
+            left/right edges rather than an inner container's, no matter the viewport width */}
+        <div className="relative left-1/2 right-1/2 -mx-[50vw] mt-10 w-screen overflow-hidden">
           <div className="flex items-center justify-center">
             <Card item={activeItem} size="active" onClick={() => {}} />
           </div>
