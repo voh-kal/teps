@@ -23,6 +23,7 @@ function Card({ item, size, onClick }) {
       style={{ backgroundImage: `url(${item.image})` }}
       aria-label={item.title}
     >
+      <div className="absolute inset-0 bg-black/45" />
       {isActive && (
         <span className="absolute left-1/2 top-1/2 flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/20 backdrop-blur-sm">
           <IconPlay className="ml-1 h-6 w-6 text-white" />
