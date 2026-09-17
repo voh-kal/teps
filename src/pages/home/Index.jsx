@@ -53,7 +53,7 @@ function Home() {
       <UseCasesSection />
       <FaqSection />
       <CtaBannerSection onScheduleDemo={() => setIsScheduleDemoOpen(true)} />
-      <UpcomingEventsSection />
+      {/* <UpcomingEventsSection /> */}
       {/* <Sponsors />
       <AboutSection /> */}
       <Footer />

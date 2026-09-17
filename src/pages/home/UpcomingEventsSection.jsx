@@ -61,7 +61,7 @@ export default function UpcomingEventsSection() {
     <section className="bg-green-50 py-24 transition-colors duration-300 dark:bg-[#202020]">
       <div className="mx-auto max-w-7xl px-6 lg:px-10">
         <div className="mx-auto max-w-2xl text-center">
-          <h2 className="font-display text-3xl font-semibold text-ink sm:text-4xl dark:text-white">Events Powered by TEPS</h2>
+          <h2 className="font-display text-3xl font-semibold text-ink sm:text-5xl dark:text-white lg:text-[60px]">Events Powered by TEPS</h2>
           <p className="mt-4 text-base leading-relaxed text-slate dark:text-white">
             See events currently powered by TEPS
           </p>

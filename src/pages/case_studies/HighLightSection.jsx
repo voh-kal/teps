@@ -15,10 +15,10 @@ function Card({ item, size, onClick }) {
     <button
       type="button"
       onClick={onClick}
-      className={`relative shrink-0 overflow-hidden rounded-3xl bg-ink bg-cover bg-center transition-all duration-500 ease-out shadow-2xl   ${
+      className={`relative shrink-0 overflow-hidden rounded-3xl bg-black bg-cover bg-center transition-all duration-500 ease-out shadow-3xl   ${
         isActive
           ? "h-95 w-85 border-[3px] border-blue sm:h-105 sm:w-120 lg:h-120 lg:w-170"
-          : "h-90 w-65 opacity-60"
+          : "h-90 w-65 "
       }`}
       style={{ backgroundImage: `url(${item.image})` }}
       aria-label={item.title}

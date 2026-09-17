@@ -23,13 +23,13 @@ function Hero({ onScheduleDemo }) {
       <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 items-center gap-16 px-6 lg:grid-cols-2 lg:gap-4 lg:px-10">
         {/* left column */}
         <div className="relative z-10 max-w-lg">
-          <span className="inline-block rounded-full bg-blue/10 px-3.5 py-1.5 font-mono text-[11px] uppercase tracking-[0.16em] text-blue">
+          <span className="inline-block rounded-full  px-4.5 py-3.5 text-[15px]  bg-[#1082DF] text-white">
             Case Study
           </span>
-          <h2 className="mt-5 font-display text-3xl font-semibold text-black dark:text-white sm:text-4xl">
+          <h2 className="mt-5 font-display text-3xl font-semibold text-black dark:text-white sm:text-5xl ">
             Wondering if you can use TEPS for your events?
           </h2>
-          <p className="mt-5 text-base leading-relaxed text-black dark:text-white">
+          <p className="mt-5 text-base leading-relaxed text-[#333333] dark:text-white text-[14px]">
             Discover how TEPS helps event organizers simplify planning, management, and delivery through one connected platform. From registration and ticketing to attendee engagement, vendor coordination, and event operations, TEPS brings every essential process together. Explore real-world case studies showing how organizations, event managers, and agencies use TEPS to streamline workflows, improve attendee experiences, and gain better visibility throughout their events. See how TEPS supports the entire event journey, helping teams stay organized, work smarter, engage audiences effectively, and make informed decisions before, during, and after every event.
           </p>
           <button
