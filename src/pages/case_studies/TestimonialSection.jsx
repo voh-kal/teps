@@ -2,6 +2,11 @@ import Testimonials from '../../components/Testimonials'
 
 const TESTIMONIALS = [
     {
+        quote: 'TEPS truly elevated our event to the next level with their seamless access and RSVP management services. The feedback from our guests regarding the access management process has been remarkable. Kudos to TEP\'s Professional and Congenial Staff! We highly recommend their services for all events.',
+        name: 'Cre8ive Workflow',
+        logo: '/dl27.png',
+    },
+    {
         quote: 'TEPS made check-in feel invisible. Guests just walked in, and our team could finally focus on the event instead of the queue.',
         name: 'Sarah Johnson, Alte Cultural Festival',
         logo: '/dl1.png',
@@ -29,7 +34,10 @@ const LOGOS = Array.from({ length: 18 }, (_, i) => ({
 }))
 
 function TestimonialSection() {
-    return <Testimonials testimonials={TESTIMONIALS} logos={LOGOS} />
+    return (<>  
+        
+        <Testimonials testimonials={TESTIMONIALS} logos={LOGOS} />
+    </>)
 }
 
 export default TestimonialSection

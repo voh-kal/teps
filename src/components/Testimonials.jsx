@@ -14,7 +14,9 @@ function Testimonials({ testimonials = [], logos = [] }) {
 
     return (
         <section className="bg-white py-24 transition-colors duration-300 dark:bg-[#0F0F0F]">
+            <h1 className='text-black text-3xl sm:text-5xl lg:text-[60px] text-center mb-16 dark:text-white'>See Why Organizers Choose TEPS</h1>
             <div className="mx-auto max-w-4xl px-6 lg:px-10 pb-16">
+                
                 <div className="flex items-center gap-4 sm:gap-8">
                     <button
                         type="button"
@@ -27,7 +29,7 @@ function Testimonials({ testimonials = [], logos = [] }) {
 
                     <div className="flex-1 text-center">
                         <IconQuote className="mx-auto h-9 w-9 text-blue" />
-                        <p className="mt-6 text-lg leading-relaxed text-ink dark:text-white sm:text-xl">
+                        <p className="mt-6 text-[16px] leading-relaxed text-ink dark:text-white">
                             {active.quote}
                         </p>
                         <div className="mt-8 flex items-center justify-center gap-3">

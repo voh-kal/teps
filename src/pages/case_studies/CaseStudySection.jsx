@@ -1,4 +1,5 @@
 import { caseStudies } from "../../data/caseStudies";
+import { IconArrowRight } from "../../components/Icons";
 
 const REASONS = [
   {
@@ -30,7 +31,7 @@ const GALLERY = [
   },
   {
 
-    src: "/case_id1.png",
+    src: "/case_id3.png",
   },
   {
 
@@ -86,6 +87,20 @@ function CaseStudySection() {
           ))}
         </div>
       </div>
+
+      {/* centered CTA below the slider */}
+      {/* <div className="mt-12 flex justify-center">
+        <button
+          type="button"
+          className="group relative inline-flex items-center gap-2 overflow-hidden rounded-[12px] border border-black px-7 py-3.5 text-sm font-semibold text-black transition-colors duration-300 dark:border-white dark:text-white"
+        >
+          <span className="absolute inset-0 -translate-x-full bg-black transition-transform duration-300 ease-out group-hover:translate-x-0 dark:bg-white" />
+          <span className="relative z-10 flex items-center gap-2 transition-colors duration-300 group-hover:text-white dark:group-hover:text-black">
+            View Case Study
+            <IconArrowRight className="h-4 w-4" />
+          </span>
+        </button>
+      </div> */}
     </section>
   );
 }
