@@ -12,12 +12,12 @@ function Hero({ header = 'THE EXPERIENCE PLUG SYSTEMS BLOG', subHeader, year: co
 
     return (
         <section className="mx-[10px] my-[10px] md:mx-[30px] md:my-[15px] rounded-lg overflow-hidden bg-white dark:bg-black">
-            <div className="grid grid-cols-1 items-stretch md:h-[350px] md:[grid-template-columns:1fr_3fr]">
+            <div className="grid grid-cols-1 items-stretch md:h-[350px] md:[grid-template-columns:1fr_3fr] lg:[grid-template-columns:2fr_3fr]">
                 <div className="flex flex-col justify-center px-6 py-8 md:px-12">
-                    <h1 className="text-2xl md:text-3xl font-bold text-black dark:text-white leading-tight">
+                    <h1 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-black dark:text-white leading-tight">
                         {restHeader}
                     </h1>
-                    <h2 className="text-2xl md:text-3xl font-bold text-[#3A72FF] leading-tight mb-6">
+                    <h2 className="text-2xl md:text-3xl lg:text-[40px] font-bold text-[#3A72FF] leading-tight mb-6">
                         {lastWord}
                     </h2>
 
@@ -36,7 +36,7 @@ function Hero({ header = 'THE EXPERIENCE PLUG SYSTEMS BLOG', subHeader, year: co
 
                 <div className="relative h-[220px] md:h-[350px]">
                     <img
-                        src="/blog.png"
+                        src="/new_blog.png"
                         alt={lastWord}
                         className="absolute inset-0 h-full w-full object-cover"
                     />

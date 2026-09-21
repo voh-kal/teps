@@ -1,7 +1,26 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import config from '../../config/api';
+
+// Helper function to strip HTML tags and decode entities
+const stripHtml = (html) => {
+    if (!html) return '';
+    // Create a temporary div to parse HTML
+    const temp = document.createElement('div');
+    temp.innerHTML = html;
+    return temp.textContent || temp.innerText || '';
+};
+
+// Helper function to create URL-friendly slugs
+const createSlug = (title) => {
+    return title
+        .toLowerCase()
+        .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
+        .trim()
+        .replace(/\s+/g, '-') // Replace spaces with hyphens
+        .replace(/-+/g, '-'); // Replace multiple hyphens with single hyphen
+};
 
 function BlogSection({ year = 'All' }) {
     const [currentPage, setCurrentPage] = useState(1);
@@ -11,30 +30,11 @@ function BlogSection({ year = 'All' }) {
     const navigate = useNavigate();
     const itemsPerPage = 9;
 
-    // Helper function to strip HTML tags and decode entities
-    const stripHtml = (html) => {
-        if (!html) return '';
-        // Create a temporary div to parse HTML
-        const temp = document.createElement('div');
-        temp.innerHTML = html;
-        return temp.textContent || temp.innerText || '';
-    };
-
-    // Helper function to create URL-friendly slugs
-    const createSlug = (title) => {
-        return title
-            .toLowerCase()
-            .replace(/[^a-z0-9\s-]/g, '') // Remove special characters
-            .trim()
-            .replace(/\s+/g, '-') // Replace spaces with hyphens
-            .replace(/-+/g, '-'); // Replace multiple hyphens with single hyphen
-    };
-
     // Fetch blogs from API
-    useEffect(() => {
-        const fetchBlogs = async () => {
+    const fetchBlogs = useCallback(async () => {
             try {
                 setLoading(true);
+                setError(null);
                 const response = await fetch(config.getApiUrl(config.endpoints.ALL_RESOURCES));
                 const data = await response.json();
                 if (data.success) {
@@ -66,10 +66,11 @@ function BlogSection({ year = 'All' }) {
             } finally {
                 setLoading(false);
             }
-        };
-
-        fetchBlogs();
     }, []);
+
+    useEffect(() => {
+        fetchBlogs();
+    }, [fetchBlogs]);
 
     // Reset to page 1 whenever the year filter changes
     useEffect(() => {
@@ -135,7 +136,7 @@ function BlogSection({ year = 'All' }) {
                             <h3 className="text-xl font-semibold dark:text-white mb-2">Failed to Load Blogs</h3>
                             <p className="text-gray-600 dark:text-white mb-4">{error}</p>
                             <button 
-                                onClick={() => window.location.reload()}
+                                onClick={fetchBlogs}
                                 className="bg-blue-600 text-white px-6 py-2 rounded-lg hover:bg-blue-700 transition-colors"
                             >
                                 Try Again
@@ -149,7 +150,7 @@ function BlogSection({ year = 'All' }) {
                     <>
                         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
                             {currentBlogs.map((blog) => (
-                                <div key={blog.id} className="overflow-hidden">
+                                <div key={blog.id} className="overflow-hidden rounded-lg p-3 transition-colors duration-300 hover:bg-white dark:hover:bg-black">
                                     {/* Blog Image */}
                                     <div className="w-full h-48 relative bg-gray-200">
                                         <img 
