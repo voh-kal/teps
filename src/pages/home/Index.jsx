@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
+import Seo from '../../components/Seo';
 import Hero from './Hero';
 import AboutSection from './AboutSection';
 import Sponsors from './Sponsors';
@@ -41,6 +42,11 @@ function Home() {
 
   return (
     <>
+      <Seo
+        title="Event Management Platform | Virtual, Hybrid & In-Person Events"
+        description="Transform your events with TEPS, Nigeria's leading event management platform. Plan, manage and execute virtual, hybrid and in-person events with seamless registration, ticketing, QR codes, and analytics. Trusted by brands across Africa."
+        path="/"
+      />
       <Navbar />
       <Hero onScheduleDemo={() => setIsScheduleDemoOpen(true)} />
       <ShowcaseSection />

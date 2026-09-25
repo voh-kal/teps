@@ -109,11 +109,11 @@ export const caseStudies = [
     },
     {
         id: 6,
-        image: '/nia.svg',
+        image: '/nia.webp',
         title: 'How the NIA Used TEPS Check-In Platform to Streamline Access Control and Enhance On-Site Event Management',
         description: 'The Nigeria Air Show, held in Abuja in December 2025, required a professional check-in solution capable of managing over 3,000 attendees across a three-day event. The organizers needed a system that would eliminate queues, enable seamless on-site registration, and provide accurate, verifiable attendance data.....',
         modalData: {
-            image: '/nia.svg',
+            image: '/nia.webp',
             title: 'How the NIA Used TEPS Check-In Platform to Streamline Access Control and Enhance On-Site Event Management',
             subtitle: 'TEPS Takes Flight: Seamless Check-In for the Nigerian International Aviation Show',
             setting: 'The Nigeria Air Show, held in Abuja in December 2025, required a professional check-in solution capable of managing over 3,000 attendees across a three-day event. ',

@@ -77,7 +77,7 @@ export default function AllInSection() {
           {/* right column: phone mockup + floating UI cards */}
           <div className="relative flex justify-center ">
             <img
-                src="/phone.svg"
+                src="/phone.webp"
                 alt="TEPS app preview on a phone"
                 className="h-full w-full object-cover"
               />

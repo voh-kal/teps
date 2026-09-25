@@ -11,7 +11,7 @@ const PANELS = [
     title: 'How TEPS Created a Seamless Registration Experience for Nigeria\'s Leading Innovation Showcase',
     paragraph:
       'The NSIA Prize for Innovation Demo Day brings together innovators, investors, government stakeholders and partners to celebrate breakthrough Nigerian innovation.',
-    image: '/use1.svg',
+    image: '/use1.webp',
     logo: '/dl26.png',
   },
   {
@@ -20,7 +20,7 @@ const PANELS = [
     title: 'How TEPS Powered Vendor Operations for a High-Volume Brand Experience',
     paragraph:
       'The Jameson Distillery Tour (JDOT 2025) is a multi-city experiential series designed to celebrate craft, culture, and community through immersive brand experiences and curated partnerships.....',
-    image: '/use2.svg',
+    image: '/use2.webp',
     logo: '/dl18.png',
   },
   {
@@ -29,7 +29,7 @@ const PANELS = [
     title: 'How  TEPS Powered a Presidential-Level Guest Journey At RenewHer Gala and Awards',
     paragraph:
       'The Renew HER Gala & Awards is one of the most anticipated high-level events of the year, hosting over 600 distinguished guests, VIPs, and government officials....',
-    image: '/use3.svg',
+    image: '/use3.webp',
     logo: '/re1.svg',
   },
   {
@@ -38,7 +38,7 @@ const PANELS = [
     title: 'How TEPS Kept The Culture Moving Without Slowing Guests Down At Alte 4.0',
     paragraph:
       'Alte Culture Fest is one of Lagos\' leading cultural festivals celebrating music, fashion, art and creative expression.',
-    image: '/use4.svg',
+    image: '/use4.webp',
     logo: '/dl14.png',
   },
 ]

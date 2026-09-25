@@ -3,7 +3,7 @@ const TRACKS = [
     tag: 'Plan',
     title: 'Simplified Management Platform',
     body: 'Create your event and choose the capabilities you need to run your event.',
-    image: '/how1.svg',
+    image: '/how1.webp',
   },
   {
     tag: 'Invite',
@@ -15,19 +15,19 @@ const TRACKS = [
     tag: 'Welcome',
     title: 'Access Control',
     body: 'Manage accreditation, access control and check-in with our fast onsite and self check-in software.',
-    image: '/how3.svg',
+    image: '/how3.webp',
   },
   {
     tag: 'Engage',
     title: 'All-In Event App',
     body: 'Keep attendees informed, connected and engaged throughout the event with ALL-IN.',
-    image: '/how4.svg',
+    image: '/how4.webp',
   },
   {
     tag: 'Improve',
     title: 'Data, Leads & Insights',
     body: 'Use Event Intelligence and reporting to make every event better than the last.',
-    image: '/how5.svg',
+    image: '/how5.webp',
   },
   {
     tag: 'Support',

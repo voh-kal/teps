@@ -1,5 +1,6 @@
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Nav";
+import Seo from "../../components/Seo";
 import Hero from "../blog/Hero";
 import { useEffect } from 'react';
 import { Link } from "react-router-dom";
@@ -76,6 +77,11 @@ function Privacy() {
 
     return (
         <>
+            <Seo
+                title="Privacy Policy"
+                description="Read the TEPS privacy policy to learn how we collect, use, and protect your information when you use our event management platform."
+                path="/privacy-policy"
+            />
             <Navbar />
             <Hero header="Privacy Policy" subHeader="Your privacy is important to us. This policy explains how we collect, use, and protect your information when you use our services." />
             

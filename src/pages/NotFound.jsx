@@ -2,6 +2,7 @@ import { ArrowLeft, Home, Search, Mail } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Nav';
 import Footer from '../components/Footer';
+import Seo from '../components/Seo';
 
 function NotFound() {
     const navigate = useNavigate();
@@ -16,8 +17,9 @@ function NotFound() {
 
     return (
         <>
+            <Seo title="Page Not Found" description="The page you're looking for doesn't exist." noindex />
             <Navbar />
-            
+
             <div className="min-h-screen bg-gray-50 flex items-center justify-center px-4 py-16">
                 <div className="max-w-lg mx-auto text-center">
                     {/* 404 Illustration */}

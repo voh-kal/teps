@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Navbar from "../../components/Navbar";
+import Seo from "../../components/Seo";
 import Statistics from "../../components/Statistics";
 import ScheduleDemo from "../../components/ScheduleDemo";
 import Hero from "./Hero";
@@ -15,6 +16,11 @@ function Index() {
 
     return (
         <>
+            <Seo
+                title="Case Studies"
+                description="See how organisations across Nigeria and Africa use TEPS to simplify event planning, streamline registration, ticketing and access control, and deliver seamless attendee experiences."
+                path="/case-studies"
+            />
             <Navbar />
             <Hero onScheduleDemo={() => setIsScheduleDemoOpen(true)} />
             <HighLightSection />

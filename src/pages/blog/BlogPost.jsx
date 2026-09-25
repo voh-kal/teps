@@ -2,6 +2,7 @@ import { ArrowLeft, Calendar, User, Clock } from 'lucide-react';
 import { useNavigate, useParams, useLocation } from 'react-router-dom';
 import { useState, useEffect } from 'react';
 import Navbar from "../../components/Navbar";
+import Seo from "../../components/Seo";
 import Hero from './Hero';
 import config from '../../config/api';
 
@@ -160,6 +161,7 @@ function BlogPost() {
     if (loading) {
         return (
             <div className='bg-[rgba(0,0,0,0.05)]'>
+                <Seo title="Blog" path={`/blog/${slug}`} />
                 <Navbar />
                 <div className="min-h-screen">
                     <div className="max-w-7xl mx-auto px-6 md:px-8 py-8">
@@ -185,6 +187,7 @@ function BlogPost() {
     if (error) {
         return (
             <div className='bg-[rgba(0,0,0,0.05)]'>
+                <Seo title="Blog" path={`/blog/${slug}`} noindex />
                 <Navbar />
                 <div className="min-h-screen">
                     <div className="max-w-7xl mx-auto py-3 md:py-6">
@@ -220,6 +223,7 @@ function BlogPost() {
     if (!blogPost) {
         return (
             <div className='bg-[rgba(0,0,0,0.05)]'>
+                <Seo title="Blog" path={`/blog/${slug}`} noindex />
                 <Navbar />
                 <div className="min-h-screen">
                     <div className="max-w-7xl mx-auto py-3 md:py-6">
@@ -242,6 +246,12 @@ function BlogPost() {
 
     return (
         <div className='bg-[rgba(0,0,0,0.05)]'>
+            <Seo
+                title={blogPost.title}
+                description={blogPost.excerpt}
+                path={`/blog/${slug}`}
+                image={blogPost.image}
+            />
             <Navbar />
             <div className="min-h-screen pb-16  px-6 md:px-8">
                 {/* Header Section */}
