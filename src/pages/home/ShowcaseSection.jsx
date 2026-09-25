@@ -11,7 +11,7 @@ const GALLERY = [
 
 export default function ShowcaseSection() {
   return (
-    <section className="relative bg-paper pb-24 pt-12 dark:bg-[#202020] transition-colors duration-300 sm:py-24">
+    <section className="relative overflow-x-hidden bg-paper pb-24 pt-12 dark:bg-[#202020] transition-colors duration-300 sm:py-24">
       {/* image positioned at the top of the section */}
       <div className="aspect-1440/381 max-h-80 overflow-hidden rounded-3xl about_absolute">
         <img
