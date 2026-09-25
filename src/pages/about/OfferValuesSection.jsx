@@ -2,17 +2,17 @@ import { IconSparkline, IconCompass, IconUsers } from '../../components/Icons.js
 
 const CORE_VALUES = [
     {
-        icon: '/core1.svg',
+        icon: '/core1.png',
         title: 'Excellence',
         body: 'We strive for perfection in every detail, ensuring your event exceeds expectations and creates lasting memories.',
     },
     {
-        icon: '/core2.svg',
+        icon: '/core2.png',
         title: 'Innovation',
         body: 'We embrace cutting-edge technology and creative solutions to bring fresh, unique experiences to your events.',
     },
     {
-        icon: '/core3.svg',
+        icon: '/core3.png',
         title: 'Passion',
         body: 'Our genuine love for creating exceptional experiences drives us to go above and beyond for every client.',
     },

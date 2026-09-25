@@ -11,7 +11,7 @@ function WhySection({ onScheduleDemo }) {
                         <div className="md:col-span-1 flex justify-center items-start">
                             <div className="w-full">
                                 <img
-                                    src="/why.svg"
+                                    src="/why.png"
                                     alt="TEPS Dashboard Interface"
                                     className="w-full h-auto rounded-lg"
                                 />
@@ -46,7 +46,7 @@ function WhySection({ onScheduleDemo }) {
                 </div>
             </section>
             {/* Experience Section */}
-            <Statistics color="bg-[#1082DF]" statHeader="Our Experience" statSubHeader="Years of expertise in delivering successful events across diverse industries" statSubHeaderClass="text-lg text-blue-100 max-w-3xl mx-auto" statHeaderClass="text-4xl md:text-5xl font-bold text-white mb-4" />
+            <Statistics color="bg-[#1082DF]" />
         </>
     );
 }

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react'
-import { IconUsers, IconGlobe, IconCalendar, IconSparkline } from '../../components/Icons.jsx'
+import { IconTrophy, IconUsers, IconBank } from '../../components/Icons.jsx'
 
 const LOGOS = [
   { src: '/dl1.png', name: 'Logo 1' },
@@ -30,28 +30,22 @@ const LOGOS = [
 
 const STATS = [
   {
-    icon: IconUsers,
+    icon: IconTrophy,
     value: 100,
     suffix: '+',
     label: 'Events Powered',
   },
   {
-    icon: IconGlobe,
+    icon: IconBank,
     value: 50,
     suffix: '+',
     label: 'Clients',
   },
   {
-    icon: IconCalendar,
+    icon: IconUsers,
     value: 20,
     suffix: 'k+',
     label: 'Attendees Managed',
-  },
-  {
-    icon: IconSparkline,
-    value: 4,
-    suffix: '',
-    label: 'years of client satisfaction',
   },
 ]
 
@@ -108,7 +102,7 @@ export default function StatsSection() {
           </p>
         </div>
 
-        <div className="mt-14 grid grid-cols-1 divide-y divide-ink/10 sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+        <div className="mx-auto mt-14 grid max-w-3xl grid-cols-1 divide-y divide-ink/10 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
           {STATS.map((stat) => {
             const Icon = stat.icon
             return (

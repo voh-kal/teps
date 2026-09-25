@@ -1,31 +1,31 @@
 import { useState } from 'react'
 import { flushSync } from 'react-dom'
-import { IconMic, IconTicket, IconGlobe, IconSparkline, IconUsers } from '../../components/Icons.jsx'
+import { IconMic, IconTicket, IconMonitorMobile, IconMailOpen, IconTaskEdit, IconConversation, IconHandshake, IconValidation, IconMobile, IconScan, IconIdea, IconChart, IconChatFeedback, IconPersonalCard, IconDiagram } from '../../components/Icons.jsx'
 
 const TABS = ['Before event', 'During event', 'After event']
 
 const CONTENT = {
   'Before event': [
     {
-      icon: IconTicket,
+      icon: IconMonitorMobile,
       title: 'Custom Event Website',
       body: 'Create a fully branded event website that makes a lasting first impression. Showcase your event details, speakers, agenda, sponsors, tickets, and updates in one beautiful, mobile-friendly destination, designed to boost registrations and deliver a seamless attendee experience.',
       image: '/r1.png',
     },
     {
-      icon: IconGlobe,
+      icon: IconMailOpen,
       title: 'Invitation',
       body: 'Make every invitation feel personal with beautifully branded designs tailored to your event. Reach guests instantly through emails and shareable links, monitor RSVPs in real time, automate reminders, and keep everyone informed from the first invite to event day. ',
       image: '/r2.png',
     },
     {
-      icon: IconUsers,
+      icon: IconTaskEdit,
       title: 'Registration',
       body: 'Give your attendees a smooth registration experience that gets them to sign up in minutes. Customize registration forms, collect information that matters, automate confirmations and manage every registration from one intuitive dashboard.',
       image: '/r4.svg',
     },
     {
-      icon: IconSparkline,
+      icon: IconTicket,
       title: 'Ticketing',
       body: 'Power every event with flexible ticketing solution designed to maximize registrations. Create tickets, set dynamic pricing, accept secure payments, monitor sales in real-time and deliver digital tickets through one seamless experience.',
       image: '/r3.png',
@@ -39,31 +39,31 @@ const CONTENT = {
   ],
   'During event': [
     {
-      icon: IconMic,
+      icon: IconConversation,
       title: 'Attendee Management',
       body: 'Keep every attendee organized from registration to the event floor. Track registrations, manage attendee information, monitor engagement and give your team a clear view of the people who matter the most at your event.',
       image: '/r6.svg',
     },
     {
-      icon: IconUsers,
+      icon: IconHandshake,
       title: 'Speaker & Exhibitor Management',
       body: 'Bring every key stakeholder into one streamlined workflow. Manage speaker profiles, sponsor commitments, exhibitor details, and communications while keeping everyone aligned throughout the event lifecycle.',
       image: '/r7.svg',
     },
     {
-      icon: IconTicket,
+      icon: IconScan,
       title: 'Check-In',
       body: 'Turn arrival into a seamless first impression. Speed up guest entry with efficient check-in, real-time attendance tracking, and easy verification, giving your team more control while getting attendees into the event faster.',
       image: '/r8.svg',
     },
     {
-      icon: IconGlobe,
+      icon: IconMobile,
       title: 'All-In App',
       body: 'Put the entire event experience in your attendees’ hands. From event information and schedules to speakers, exhibitors, networking, and updates, the All-In App keeps everything they need just a tap away.',
       image: '/r9.svg',
     },
     {
-      icon: IconSparkline,
+      icon: IconValidation,
       title: 'Accreditation & Access Control',
       body: 'Make access simple, secure, and seamless. Assign credentials, manage access levels, and control who gets into specific areas of your event with a system built to keep check-in and security running smoothly.',
       image: '/r10.svg',
@@ -71,31 +71,31 @@ const CONTENT = {
   ],
   'After event': [
     {
-      icon: IconGlobe,
+      icon: IconIdea,
       title: 'Event Intelligence',
       body: 'Turn registrations, attendance, engagement and operational data into useful insight. Understand what happened, measure performance and make better decisions for your next event.',
       image: '/r11.svg',
     },
     {
-      icon: IconUsers,
+      icon: IconChart,
       title: 'Attendee Engagement Report',
       body: 'See how attendees interacted with your event across sessions, activities and touchpoints. Understand audience interests and use the insight to improve future programming.',
       image: '/r12.svg',
     },
     {
-      icon: IconSparkline,
+      icon: IconChatFeedback,
       title: 'Post Event Engagement',
       body: 'Collect targeted feedback, measure attendee satisfaction and understand what worked and what needs to improve.',
       image: '/r13.svg',
     },
     {
-      icon: IconTicket,
+      icon: IconPersonalCard,
       title: 'Lead Management',
       body: 'Capture, organise and follow up with event leads. Track interactions, qualify prospects and connect event activity to business opportunities.',
       image: '/r14.svg',
     },
     {
-      icon: IconMic,
+      icon: IconDiagram,
       title: 'Sales Reports and ROI',
       body: 'Get a clear view of your event’s financial performance with detailed sales reports and ROI insights. Track revenue, ticket sales, expenses, and profitability to understand what worked and make smarter decisions for your next event.',
       image: '/r15.svg',

@@ -1,31 +1,31 @@
 import { useEffect, useRef, useState } from 'react'
-import { IconUsers, IconGlobe, IconCalendar, IconSparkline } from './Icons.jsx'
+import { IconTrophy, IconBank, IconUsers, IconSparkline } from './Icons.jsx'
 
 const STATS = [
     {
-        icon: IconUsers,
+        icon: IconTrophy,
         value: 100,
         suffix: '+',
         label: 'Events hosted across 10 countries',
     },
     {
-        icon: IconGlobe,
+        icon: IconBank,
         value: 50,
         suffix: '+',
         label: 'Happy clients & organizations',
     },
     {
-        icon: IconCalendar,
+        icon: IconUsers,
         value: 20,
         suffix: 'k+',
         label: 'Attendees managed',
     },
-    {
-        icon: IconSparkline,
-        value: 4,
-        suffix: '',
-        label: 'Years of client satisfaction',
-    },
+    // {
+    //     icon: IconSparkline,
+    //     value: 4,
+    //     suffix: '',
+    //     label: 'Years of client satisfaction',
+    // },
 ]
 
 function CountUpNumber({ value, suffix, duration = 1600 }) {
@@ -74,17 +74,17 @@ function Statistics({ color, statHeader, statSubHeader, statHeaderClass, statSub
             <section className={`${color} py-10 md:py-16`}>
                 <div className="max-w-7xl mx-auto px-6 md:px-8 text-center">
                     {/* Header */}
-                    <div className="mb-16">
+                    {/* <div className="mb-16">
                         <h2 className={`${statHeaderClass}`}>
                             {statHeader}
                         </h2>
                         <p className={`${statSubHeaderClass}`}>
                             {statSubHeader}
                         </p>
-                    </div>
+                    </div> */}
 
                     {/* Statistics Row */}
-                    <div className="mt-14 grid grid-cols-1 divide-y divide-white/15 sm:grid-cols-4 sm:divide-x sm:divide-y-0">
+                    <div className="mx-auto grid max-w-3xl grid-cols-1 divide-y divide-white/15 sm:grid-cols-3 sm:divide-x sm:divide-y-0">
                         {STATS.map((stat) => {
                             const Icon = stat.icon
                             return (
