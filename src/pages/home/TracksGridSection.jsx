@@ -67,11 +67,11 @@ export default function TracksGridSection() {
                 <p className="mt-2 text-[13px] leading-relaxed text-slate dark:text-[#DCDCDC]">
                   {track.body}
                 </p>
-                <div className="h-[219px] w-full overflow-hidden mt-10">
+                <div className="h-full w-full overflow-hidden pt-10">
                   <img
                     src={track.image}
                     alt=""
-                    className="h-full w-full  transition-transform duration-500 group-hover:scale-110"
+                    className="h-[225px] w-auto mx-auto  transition-transform duration-500 group-hover:scale-110"
                   />
                 </div>
               </div>
