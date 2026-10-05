@@ -37,6 +37,7 @@ export const caseStudies = [
             result: 'The result was a smooth and efficient registration and check-in process that enhanced the overall experience for attendees. Guests were able to quickly register and check in without any issues, allowing them to focus on the event itself rather than logistical challenges.',
             takeaway: 'At TEPS, we understand that every event is unique, and we are committed to providing tailored solutions that meet the specific needs of our clients. By combining technology with a deep understanding of event dynamics, we are able to create seamless experiences that allow attendees to focus on what matters most – the event itself.',
             location: 'Abuja, Nigeria',
+            anlocation: 'Abuja, Nigeria',
             time: 'October 22, 2023',
             hostName: 'Michael Chen',
             hostImage: '/host.svg',
