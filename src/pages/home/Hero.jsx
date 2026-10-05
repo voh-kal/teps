@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { IconCompass, IconCalendar, IconUsers, IconMap } from '../../components/Icons.jsx'
+import { useCreateEvent } from '../../hooks/useCreateEvent'
 
 const RAIL_ITEMS = [
   { icon: '/side1.png', label: 'Experience TEPS', targetId: 'experience-teps' },
