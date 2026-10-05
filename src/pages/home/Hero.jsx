@@ -111,7 +111,7 @@ export default function Hero({ onScheduleDemo }) {
         })}
       </div>
 
-      {/* sponsor marquee, bottom of hero */}
+      {/* sponsor marquee, bottom of hero check*/}
       <div className="absolute bottom-0 z-10 flex h-20 w-full items-center border-paper/10 bg-[#00000099]">
         <div className="mx-auto w-full max-w-7xl px-6 lg:px-10">
           <div className="no-scrollbar flex overflow-hidden">
