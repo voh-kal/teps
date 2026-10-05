@@ -11,6 +11,8 @@ const RAIL_ITEMS = [
 const SPONSORS = [{'src': './l1.png', 'name': 'Sponsor 1'}, {'src': './l2.png', 'name': 'Sponsor 2'}, {'src': './l3.png', 'name': 'Sponsor 3'}, {'src': './l4.png', 'name': 'Sponsor 4'}, {'src': './l5.png', 'name': 'Sponsor 5'}, {'src': './l6.png', 'name': 'Sponsor 6'}, {'src': './l7.png', 'name': 'Sponsor 7'}, {'src': './l8.png', 'name': 'Sponsor 8'}, {'src': './l9.png', 'name': 'Sponsor 9'}, {'src': './l10.png', 'name': 'Sponsor 10'}, {'src': './l11.png', 'name': 'Sponsor 11'}, {'src': './l12.png', 'name': 'Sponsor 12'}, {'src': './l13.png', 'name': 'Sponsor 13'}, {'src': './l14.png', 'name': 'Sponsor 14'}, {'src': './l15.png', 'name': 'Sponsor 15'}, {'src': './l16.png', 'name': 'Sponsor 16'}, {'src': './l17.png', 'name': 'Sponsor 17'}, {'src': './l18.png', 'name': 'Sponsor 18'}]
 
 export default function Hero({ onScheduleDemo }) {
+
+  const { handleCreateEvent } = useCreateEvent();
   const [hovered, setHovered] = useState(null)
 
   const scrollToSection = (targetId) => {
@@ -59,12 +61,12 @@ export default function Hero({ onScheduleDemo }) {
             >
               Book a Demo
             </button>
-            <a
-              href="#tickets"
+            <button
+              onClick={handleCreateEvent}
               className="the_btn_width inline-flex items-center justify-center rounded-[15px] bg-[#3A72FF] px-7 py-3.5 text-sm font-semibold text-white transition-colors hover:bg-[#090949]"
             >
               Create Event
-            </a>
+            </button>
           </div>
         </div>
       </div>

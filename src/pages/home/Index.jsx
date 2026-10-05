@@ -18,8 +18,12 @@ import UseCasesSection from './UseCasesSection.jsx'
 import FaqSection from './FaqSection.jsx'
 import CtaBannerSection from './CtaBannerSection.jsx'
 import UpcomingEventsSection from './UpcomingEventsSection.jsx'
+import { useCreateEvent } from '../../hooks/useCreateEvent';
 
 function Home() {
+
+  const { handleCreateEvent } = useCreateEvent(); 
+
   const [isScheduleDemoOpen, setIsScheduleDemoOpen] = useState(false);
   const location = useLocation();
 
